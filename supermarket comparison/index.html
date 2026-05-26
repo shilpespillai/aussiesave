@@ -1319,10 +1319,13 @@
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
                 fetch('/api/search?q=' + encodeURIComponent(query))
-                    .then(res => res.json())
+                    .then(res => {
+                        if (!res.ok) throw new Error("HTTP error " + res.status);
+                        return res.json();
+                    })
                     .then(data => {
                         container.innerHTML = '';
-                        if (data.length === 0) {
+                        if (!Array.isArray(data) || data.length === 0) {
                             container.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:30px; font-size:13px;">No items found.</div>`;
                             return;
                         }
@@ -1337,6 +1340,7 @@
                         });
                     })
                     .catch(err => {
+                        console.error(err);
                         container.innerHTML = `<div style="text-align:center; color:red; padding:30px; font-size:13px;">Scraper error. Ensure backend is running.</div>`;
                     });
             }, 400); // Debounce search requests

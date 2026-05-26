@@ -720,30 +720,35 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
         self.send_json(sorted(CATALOG.keys()))
 
     def handle_api_search(self, query_string):
-        params = urllib.parse.parse_qs(query_string)
-        query = params.get('q', [''])[0].strip()
+        try:
+            params = urllib.parse.parse_qs(query_string)
+            query = params.get('q', [''])[0].strip()
 
-        if not query or len(query) < 2:
-            self.send_json({"error": "Query too short"}, 400)
-            return
+            if not query or len(query) < 2:
+                self.send_json({"error": "Query too short"}, 400)
+                return
 
-        # Try to resolve to a catalog category
-        cat_key = resolve_catalog_key(query)
+            # Try to resolve to a catalog category
+            cat_key = resolve_catalog_key(query)
 
-        if cat_key and cat_key in CATALOG:
-            templates = CATALOG[cat_key]
-        else:
-            # Generative fallback for truly unknown products
-            cap_q = query.capitalize()
-            templates = [
-                {"name": f"{cap_q} Premium Selection 500g",  "brand": "Premium Select",    "size": "500g", "base_price": 15.00},
-                {"name": f"Woolworths {cap_q} Value Pack",   "brand": "Woolworths",        "size": "1kg",  "base_price": 6.50},
-                {"name": f"ALDI {cap_q} House Brand",        "brand": "ALDI",              "size": "500g", "base_price": 4.99},
-                {"name": f"Coles {cap_q} Everyday",          "brand": "Coles",             "size": "500g", "base_price": 5.50},
-            ]
+            if cat_key and cat_key in CATALOG:
+                templates = CATALOG[cat_key]
+            else:
+                # Generative fallback for truly unknown products
+                cap_q = query.capitalize()
+                templates = [
+                    {"name": f"{cap_q} Premium Selection 500g",  "brand": "Premium Select",    "size": "500g", "base_price": 15.00},
+                    {"name": f"Woolworths {cap_q} Value Pack",   "brand": "Woolworths",        "size": "1kg",  "base_price": 6.50},
+                    {"name": f"ALDI {cap_q} House Brand",        "brand": "ALDI",              "size": "500g", "base_price": 4.99},
+                    {"name": f"Coles {cap_q} Everyday",          "brand": "Coles",             "size": "500g", "base_price": 5.50},
+                ]
 
-        results = [make_result(t, query, i, cat_key if cat_key else query) for i, t in enumerate(templates)]
-        self.send_json(results)
+            results = [make_result(t, query, i, cat_key if cat_key else query) for i, t in enumerate(templates)]
+            self.send_json(results)
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            self.send_json({"error": str(e)}, 500)
 
 
 if __name__ == "__main__":
