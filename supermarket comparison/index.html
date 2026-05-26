@@ -1089,12 +1089,14 @@
                     watchlist.map(cat =>
                         fetch('/api/search?q=' + encodeURIComponent(cat))
                             .then(r => r.json())
-                            .then(data => data && data.length > 0 ? data[0] : null)
-                            .catch(() => null)
+                            .catch(() => [])
                     )
                 );
 
-                const deals = results.filter(Boolean);
+                const deals = results.flat().filter(Boolean);
+                
+                // Reset local database so we only show the current watchlist's products
+                database.grocery = [];
                 deals.forEach(p => {
                     if (!database.grocery.some(x => x.id === p.id)) {
                         database.grocery.push(p);
@@ -1102,7 +1104,7 @@
                 });
 
                 let totalSaving = 0;
-                deals.forEach(p => {
+                database.grocery.forEach(p => {
                     const prices = p.stores.map(s => s.price);
                     totalSaving += Math.max(...prices) - Math.min(...prices);
                 });
