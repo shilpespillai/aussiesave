@@ -264,8 +264,12 @@ def scrape_aldi():
     print(f"\n--- Scraping ALDI (Specials & Everyday) ---")
     urls = [
         ("https://www.aldi.com.au/en/groceries/super-savers/", "super-savers"),
-        ("https://www.aldi.com.au/en/groceries/laundry-household/", "laundry"),
-        ("https://www.aldi.com.au/en/groceries/baby/", "baby")
+        ("https://www.aldi.com.au/products/dairy-eggs-fridge/milk/k/1111111160", "milk"),
+        ("https://www.aldi.com.au/products/dairy-eggs-fridge/long-life-milk/k/1111111161", "milk"),
+        ("https://www.aldi.com.au/products/laundry-household/laundry/k/1111111232", "laundry"),
+        ("https://www.aldi.com.au/products/laundry-household/dishwashing/k/1111111233", "dishwashing"),
+        ("https://www.aldi.com.au/products/snacks-confectionery/chips-corn-chips-other/k/1588161408332089", "chips"),
+        ("https://www.aldi.com.au/products/snacks-confectionery/confectionery/k/1588161408332088", "chocolate")
     ]
     
     headers = {

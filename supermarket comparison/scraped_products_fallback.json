@@ -508,5 +508,1603 @@
             }
         },
         "price_history": []
+    },
+    "aldi_goodness-regular-soy-milk-1l-000000000000398444": {
+        "barcode": "",
+        "name": "Regular Soy Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/51664ea3-d805-4d79-9013-0b9d0b88cf37/Regular%20Soy%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.59,
+                "original_price": 1.59,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-rice-milk-1l-000000000000398637": {
+        "barcode": "",
+        "name": "Rice Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/debf229e-a790-4223-927c-25e4334a1d74/Rice%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.85,
+                "original_price": 1.85,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_full-cream-milk-2l-000000000000398689": {
+        "barcode": "",
+        "name": "Full Cream Milk 2L",
+        "brand": "FARMDALE",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a17bcc6d-7a5f-49b9-adeb-224d162553d4/Full%20Cream%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 3.55,
+                "original_price": 3.55,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_light-milk-2l-000000000000398691": {
+        "barcode": "",
+        "name": "Light Milk 2L",
+        "brand": "FARMDALE",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/93645b60-eb11-4046-b28e-2b441f8585a4/Light%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 3.55,
+                "original_price": 3.55,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_full-cream-milk-3l-000000000000398894": {
+        "barcode": "",
+        "name": "Full Cream Milk 3L",
+        "brand": "FARMDALE",
+        "size": "3 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/0fc1211c-ed08-4a72-a234-56a9e132cac6/Full%20Cream%20Milk%203L",
+        "prices": {
+            "ALDI": {
+                "price": 5.15,
+                "original_price": 5.15,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_cultured-buttermilk-600ml-000000000000398942": {
+        "barcode": "",
+        "name": "Cultured Buttermilk 600ml",
+        "brand": "FARMDALE",
+        "size": "0.6 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/741cbc92-d6d9-4cdd-8c93-041b5159207d/Cultured%20Buttermilk%20600ml",
+        "prices": {
+            "ALDI": {
+                "price": 2.39,
+                "original_price": 2.39,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_the-a2-milk-company-a2-light-milk-2l-000000000000398948": {
+        "barcode": "",
+        "name": "A2 Light Milk 2L",
+        "brand": "A2 THE A2 MILK COMPANY",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/bb0fa606-4990-44ab-8019-226e5171ff06/A2%20Light%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 6.89,
+                "original_price": 6.89,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_the-a2-milk-company-a2-full-cream-milk-2l-000000000000398949": {
+        "barcode": "",
+        "name": "A2 Full Cream Milk 2L",
+        "brand": "A2 THE A2 MILK COMPANY",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a652e235-3b47-4cad-b7d4-d153e48a87a4/A2%20Full%20Cream%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 6.89,
+                "original_price": 6.89,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_chocolate-flavoured-milk-2l-000000000000399228": {
+        "barcode": "",
+        "name": "Chocolate Flavoured Milk 2L",
+        "brand": "FARMDALE",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/c869cf21-319d-4148-a5ca-e1edb67abdfc/Chocolate%20Flavoured%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_iced-coffee-flavoured-milk-2l-000000000000399229": {
+        "barcode": "",
+        "name": "Iced Coffee Flavoured Milk 2L",
+        "brand": "FARMDALE",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/2915a3ce-3da1-457f-b7bc-1546f4a1cf7c/Iced%20Coffee%20Flavoured%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-oat-milk-1l-000000000000399309": {
+        "barcode": "",
+        "name": "Oat Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/5e2db012-63cf-4f59-b31b-0b6f40f5a4d2/Oat%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.65,
+                "original_price": 1.65,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_full-cream-milk-1l-000000000000399611": {
+        "barcode": "",
+        "name": "Full Cream Milk 1L",
+        "brand": "FARMDALE",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/cd0a15dd-4610-4156-9652-de9fe688e507/Full%20Cream%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.85,
+                "original_price": 1.85,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_light-milk-1l-000000000000399612": {
+        "barcode": "",
+        "name": "Light Milk 1L",
+        "brand": "FARMDALE",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/32f42bb6-aade-4192-a833-8c7e1895829b/Light%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.85,
+                "original_price": 1.85,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_lactose-free-milk-1l-000000000000399681": {
+        "barcode": "",
+        "name": "Lactose Free Milk 1L",
+        "brand": "FARMDALE",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/4859c49d-689f-4c84-8ca4-3b7f217f368f/Lactose%20Free%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 3.19,
+                "original_price": 3.19,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_soy-milk-1l-000000000000399905": {
+        "barcode": "",
+        "name": "Soy Milk 1L",
+        "brand": "BONSOY",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/42ff8a37-78b4-41b4-b723-40631f08d84a/Soy%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 4.49,
+                "original_price": 4.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_iced-coffee-double-espresso-750ml-000000000000400040": {
+        "barcode": "",
+        "name": "Iced Coffee Double Espresso 750ml",
+        "brand": "DARE",
+        "size": "0.75 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/3ea04305-ca6a-4394-b3d1-69472638c5f2/Iced%20Coffee%20Double%20Espresso%20750ml",
+        "prices": {
+            "ALDI": {
+                "price": 4.49,
+                "original_price": 4.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_lactose-free-full-cream-milk-2l-000000000000400137": {
+        "barcode": "",
+        "name": "Lactose Free Full Cream Milk 2L",
+        "brand": "FARMDALE",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/3a2081d7-7850-4703-9ba8-222e0eeb877a/Lactose%20Free%20Full%20Cream%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 4.79,
+                "original_price": 4.79,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-organic-soy-milk-1l-000000000000400405": {
+        "barcode": "",
+        "name": "Organic Soy Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/3314912a-dd63-4911-b7aa-903471be828b/Organic%20Soy%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.85,
+                "original_price": 1.85,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_active-heart-active-milk-1l-000000000000400653": {
+        "barcode": "",
+        "name": "Heart Active Milk 1L",
+        "brand": "HEART ACTIVE",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a6f32eea-74d7-4e3d-b2e2-cc5d5c0c8abb/Heart%20Active%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 4.25,
+                "original_price": 4.25,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_probiotic-milk-drink-5-pack-65ml-000000000000400847": {
+        "barcode": "",
+        "name": "Probiotic Milk Drink 5 Pack 65ml",
+        "brand": "BIOCULT",
+        "size": "0.325 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/1355a94c-18e0-4f21-ac66-74d52dc7b2ea/Probiotic%20Milk%20Drink%205%20Pack%2065ml",
+        "prices": {
+            "ALDI": {
+                "price": 3.19,
+                "original_price": 3.19,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_full-cream-milk-2l-000000000000402123": {
+        "barcode": "",
+        "name": "Full Cream Milk 2L",
+        "brand": "NORCO",
+        "size": "2 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/ad79c558-d4d8-48f4-97fe-d89b9a8d353d/Full%20Cream%20Milk%202L",
+        "prices": {
+            "ALDI": {
+                "price": 5.05,
+                "original_price": 5.05,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_light-milk-3l-000000000000405205": {
+        "barcode": "",
+        "name": "Light Milk 3L",
+        "brand": "FARMDALE",
+        "size": "3 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/d7ff50e4-77ea-44cb-80d8-46b52548f2b3/Light%20Milk%203L",
+        "prices": {
+            "ALDI": {
+                "price": 5.15,
+                "original_price": 5.15,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-soy-light-milk-1l-000000000000405299": {
+        "barcode": "",
+        "name": "Soy Light Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a27d8d40-26f1-4bc4-b57f-f7fc13983a81/Soy%20Light%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.59,
+                "original_price": 1.59,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_sweetened-condensed-milk-397g-000000000000405304": {
+        "barcode": "",
+        "name": "Sweetened Condensed Milk 397g",
+        "brand": "FARMDALE",
+        "size": "397 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/c6b97c9f-4e80-41b1-be8e-75e68e34e73e/Sweetened%20Condensed%20Milk%20397g",
+        "prices": {
+            "ALDI": {
+                "price": 2.09,
+                "original_price": 2.09,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_finest-dairy-1-5l-000000000000508528": {
+        "barcode": "",
+        "name": "Finest Dairy 1.5L",
+        "brand": "NORCO",
+        "size": "1.5 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a519d8ae-6108-44c7-9123-f886ebbcc06e/Finest%20Dairy%201.5L",
+        "prices": {
+            "ALDI": {
+                "price": 4.49,
+                "original_price": 4.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-original-almond-milk-1l-000000000000399059": {
+        "barcode": "",
+        "name": "Original Almond Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/06d5d819-dbf6-49ab-8e28-acf1dca98350/Original%20Almond%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.69,
+                "original_price": 1.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-unsweetened-almond-milk-1l-000000000000399060": {
+        "barcode": "",
+        "name": "Unsweetened Almond Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/ed49a053-fecf-402a-8aca-8c7c2f953dde/Unsweetened%20Almond%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.69,
+                "original_price": 1.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_lactose-free-light-long-life-milk-1l-000000000000399096": {
+        "barcode": "",
+        "name": "Lactose Free Light Long Life Milk 1L",
+        "brand": "FARMDALE",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/faba5325-76fe-4591-af80-6ef208480500/Lactose%20Free%20Light%20Long%20Life%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.99,
+                "original_price": 1.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_regular-full-cream-milk-powder-1kg-000000000000399851": {
+        "barcode": "",
+        "name": "Regular Full Cream Milk Powder 1kg",
+        "brand": "FARMDALE",
+        "size": "1,000 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/711cb161-9171-45e5-9197-e465a86cfa5a/Regular%20Full%20Cream%20Milk%20Powder%201kg",
+        "prices": {
+            "ALDI": {
+                "price": 9.99,
+                "original_price": 9.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-organic-unsweetened-almond-milk-1l-000000000000400242": {
+        "barcode": "",
+        "name": "Organic Unsweetened Almond Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f1dc30e4-d54a-41b2-94ed-769f62e67e19/Organic%20Unsweetened%20Almond%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 2.29,
+                "original_price": 2.29,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-barista-almond-milk-1l-000000000000402031": {
+        "barcode": "",
+        "name": "Barista Almond Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/7803d6bd-fde7-4c8f-8f22-826b1a43a578/Barista%20Almond%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 2.99,
+                "original_price": 2.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-barista-oat-milk-1l-000000000000403625": {
+        "barcode": "",
+        "name": "Barista Oat Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/e93612f0-3a05-4538-b188-2ec9ace0b9e8/Barista%20Oat%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 2.99,
+                "original_price": 2.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_full-cream-lactose-free-long-life-milk-1l-000000000000405052": {
+        "barcode": "",
+        "name": "Full Cream Lactose Free Long Life Milk 1L",
+        "brand": "FARMDALE",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f3c9d3d3-c17e-4c82-a451-c3e54923c297/Full%20Cream%20Lactose%20Free%20Long%20Life%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 1.99,
+                "original_price": 1.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_evaporated-milk-384ml-000000000000405570": {
+        "barcode": "",
+        "name": "Evaporated Milk 384ml",
+        "brand": "FARMDALE",
+        "size": "384 ml",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a65f26ec-ea92-4988-908f-d612ba66c741/Evaporated%20Milk%20384ml",
+        "prices": {
+            "ALDI": {
+                "price": 1.89,
+                "original_price": 1.89,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_goodness-organic-coconut-milk-1l-000000000000607981": {
+        "barcode": "",
+        "name": "Organic Coconut Milk 1L",
+        "brand": "INNER GOODNESS",
+        "size": "1 L",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/6ad6a87e-c5cd-4f05-9ec7-a4fe5378e376/Organic%20Coconut%20Milk%201L",
+        "prices": {
+            "ALDI": {
+                "price": 2.25,
+                "original_price": 2.25,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_thin-cut-chips-original-230g-000000000000364772": {
+        "barcode": "",
+        "name": "Thin Cut Chips Original 230g",
+        "brand": "SPRINTERS",
+        "size": "230 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/77600604-97fd-455b-89ce-e17b50902a36/Thin%20Cut%20Chips%20Original%20230g",
+        "prices": {
+            "ALDI": {
+                "price": 2.69,
+                "original_price": 2.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_crinkle-cut-original-potato-chips-230g-000000000000364773": {
+        "barcode": "",
+        "name": "Crinkle Cut Original Potato Chips 230g",
+        "brand": "SPRINTERS",
+        "size": "230 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/b2a0ffcf-cee9-42ff-b6d3-679f600eca2e/Crinkle%20Cut%20Original%20Potato%20Chips%20230g",
+        "prices": {
+            "ALDI": {
+                "price": 2.69,
+                "original_price": 2.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_crinkle-cut-potato-chips-chicken-230g-000000000000364774": {
+        "barcode": "",
+        "name": "Crinkle Cut Potato Chips Chicken 230g",
+        "brand": "SPRINTERS",
+        "size": "230 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a090da9e-cffb-4ed7-8f94-8370644ad698/Crinkle%20Cut%20Potato%20Chips%20Chicken%20230g",
+        "prices": {
+            "ALDI": {
+                "price": 2.69,
+                "original_price": 2.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_gourmet-snack-co-deli-style-flavoured-potato-chips-10-pack-280g-000000000000365451": {
+        "barcode": "",
+        "name": "Deli Style Flavoured Potato Chips 10 Pack 280g",
+        "brand": "BLACKSTONE GOURMET SNACK CO.",
+        "size": "280 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/257ef57b-6ff8-435c-9cb7-02bd55657f25/Deli%20Style%20Flavoured%20Potato%20Chips%2010%20Pack%20280g",
+        "prices": {
+            "ALDI": {
+                "price": 5.19,
+                "original_price": 5.19,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_top-20-family-favourites-chips-multipack-20-pack-375g-000000000000366203": {
+        "barcode": "",
+        "name": "Top 20 Family Favourites Chips Multipack 20 Pack 375g",
+        "brand": "LICENSED",
+        "size": "375 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/ac6b0e7e-85bb-4b96-8d06-a8048a8dda1f/Top%2020%20Family%20Favourites%20Chips%20Multipack%2020%20Pack%20375g",
+        "prices": {
+            "ALDI": {
+                "price": 7.49,
+                "original_price": 7.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_crinkle-cut-potato-chips-salt-vinegar-230g-000000000000366599": {
+        "barcode": "",
+        "name": "Crinkle Cut Potato Chips Salt &amp; Vinegar 230g",
+        "brand": "SPRINTERS",
+        "size": "230 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/baa9733c-5f03-409e-adf7-957b456c1f05/Crinkle%20Cut%20Potato%20Chips%20Salt%20%20Vinegar%20230g",
+        "prices": {
+            "ALDI": {
+                "price": 2.69,
+                "original_price": 2.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_cheese-twisties-270g-000000000000366951": {
+        "barcode": "",
+        "name": "Cheese Twisties 270g",
+        "brand": "TWISTIES",
+        "size": "270 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/12f7545a-4448-488c-a5d3-3deb4f635b74/Cheese%20Twisties%20270g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_s-snack-faves-20-pack-000000000000368024": {
+        "barcode": "",
+        "name": "Snack Faves 20 Pack",
+        "brand": "SMITH&#39;S",
+        "size": "392 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/48b4d865-a8fd-4837-9493-acbac1f8cea9/Snack%20Faves%2020%20Pack",
+        "prices": {
+            "ALDI": {
+                "price": 7.99,
+                "original_price": 7.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_so-natural-foods-salted-lentil-chips-120g-000000000000368082": {
+        "barcode": "",
+        "name": "Salted Lentil Chips 120g",
+        "brand": "OH SO NATURAL FOODS",
+        "size": "120 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/7ae55cea-5b1a-47e5-939f-4d7d7a08b1dd/Salted%20Lentil%20Chips%20120g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_pretzel-twists-200g-000000000000368692": {
+        "barcode": "",
+        "name": "Pretzel Twists 200g",
+        "brand": "SPRINTERS",
+        "size": "200 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/8164ea28-bf2b-4618-b930-9719e7356c4a/Pretzel%20Twists%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 1.99,
+                "original_price": 1.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_cheese-onion-crinkle-cut-chips-230g-000000000000369341": {
+        "barcode": "",
+        "name": "Cheese &amp; Onion Crinkle Cut Chips 230g",
+        "brand": "SPRINTERS",
+        "size": "230 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/fb01247a-e0c7-4373-acc0-f7a102817464/Cheese%20%20Onion%20Crinkle%20Cut%20Chips%20230g",
+        "prices": {
+            "ALDI": {
+                "price": 2.69,
+                "original_price": 2.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_barbecue-crinkle-cut-potato-chips-230g-000000000000369342": {
+        "barcode": "",
+        "name": "Barbecue Crinkle Cut Potato Chips 230g",
+        "brand": "SPRINTERS",
+        "size": "230 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f8ee4cd2-0bac-49f9-83d8-96990ae91128/Barbecue%20Crinkle%20Cut%20Potato%20Chips%20230g",
+        "prices": {
+            "ALDI": {
+                "price": 2.69,
+                "original_price": 2.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_crinkle-cut-multipack-20-pack-380g-000000000000369343": {
+        "barcode": "",
+        "name": "Crinkle Cut Multipack 20 Pack 380g",
+        "brand": "SPRINTERS",
+        "size": "380 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/189911bd-ab65-496d-9d28-8dfb5bce606f/Crinkle%20Cut%20Multipack%2020%20Pack%20380g",
+        "prices": {
+            "ALDI": {
+                "price": 5.75,
+                "original_price": 5.75,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_s-chicken-multipack-6-pack-108g-000000000000370628": {
+        "barcode": "",
+        "name": "Chicken Multipack 6 Pack 108g",
+        "brand": "JUMPY&#39;S",
+        "size": "108 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/5204f2f2-8099-4432-b7b2-401d1aab96cb/Chicken%20Multipack%206%20Pack%20108g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_snaps-harvest-snaps-original-salted-200g-000000000000370731": {
+        "barcode": "",
+        "name": "Harvest Snaps Original Salted 200g",
+        "brand": "HARVEST SNAPS",
+        "size": "200 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/2a19d6ba-727f-42ab-a7c8-dbfd6ad83971/Harvest%20Snaps%20Original%20Salted%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_soy-crisps-350g-000000000000370784": {
+        "barcode": "",
+        "name": "Soy Crisps 350g",
+        "brand": "FORRESTERS",
+        "size": "0.35 kg",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/e77bfd74-b736-4b0b-a0d8-5ad72258d837/Soy%20Crisps%20350g",
+        "prices": {
+            "ALDI": {
+                "price": 4.49,
+                "original_price": 4.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_mini-s-sour-cream-onion-potato-chips-5-pack-19g-000000000000479836": {
+        "barcode": "",
+        "name": "Mini&#39;s Sour Cream &amp; Onion Potato Chips 5 Pack 19g",
+        "brand": "PRINGLES",
+        "size": "95 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/86274cdf-05ff-4310-a13f-114f8b4a0fcb/Minis%20Sour%20Cream%20%20Onion%20Potato%20Chips%205%20Pack%2019g",
+        "prices": {
+            "ALDI": {
+                "price": 3.49,
+                "original_price": 3.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_cheese-rings-190g-000000000000505456": {
+        "barcode": "",
+        "name": "Cheese Rings 190g",
+        "brand": "SPRINTERS",
+        "size": "190 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a4a00747-1264-4f36-9008-1f42ea8ca99c/Cheese%20Rings%20190g",
+        "prices": {
+            "ALDI": {
+                "price": 2.29,
+                "original_price": 2.29,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_tora-tortilla-strips-white-corn-230g-000000000000526266": {
+        "barcode": "",
+        "name": "Tortilla Strips White Corn 230g",
+        "brand": "EL TORA",
+        "size": "230 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/79a57017-d838-48db-9b90-15401cfb5241/Tortilla%20Strips%20White%20Corn%20230g",
+        "prices": {
+            "ALDI": {
+                "price": 3.29,
+                "original_price": 3.29,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_so-natural-organic-organic-corn-chips-200g-000000000000526282": {
+        "barcode": "",
+        "name": "Organic Corn Chips 200g",
+        "brand": "OH SO NATURAL ORGANIC",
+        "size": "200 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/3c906a6f-cf59-41a9-b7cb-5856dcb53a8a/Organic%20Corn%20Chips%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 3.39,
+                "original_price": 3.39,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_s-tasty-mix-chips-20-pack-368g-000000000000540332": {
+        "barcode": "",
+        "name": "Tasty Mix Chips 20 Pack 368g",
+        "brand": "SMITH&#39;S",
+        "size": "368 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/12f7b8fb-9d68-43f7-93d3-9b2dc813cb9f/Tasty%20Mix%20Chips%2020%20Pack%20368g",
+        "prices": {
+            "ALDI": {
+                "price": 7.99,
+                "original_price": 7.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_gourmet-snack-co-parmesan-prosciutto-flavoured-deli-style-potato-chips-175e-000000000000569013": {
+        "barcode": "",
+        "name": "Parmesan &amp; Prosciutto Flavoured Deli Style Potato Chips 175e",
+        "brand": "BLACKSTONE GOURMET SNACK CO.",
+        "size": "175 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/6f6fb851-9375-436d-939b-6e5399908e18/Parmesan%20%20Prosciutto%20Flavoured%20Deli%20Style%20Potato%20Chips%20175e",
+        "prices": {
+            "ALDI": {
+                "price": 3.49,
+                "original_price": 3.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_crunch-korean-seaweed-snack-6-pack-5g-000000000000590310": {
+        "barcode": "",
+        "name": "Korean Seaweed Snack 6 Pack 5g",
+        "brand": "SEA CRUNCH",
+        "size": "30 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/16ea0333-8985-45e0-8652-bfa8535dc45d/Korean%20Seaweed%20Snack%206%20Pack%205g",
+        "prices": {
+            "ALDI": {
+                "price": 3.19,
+                "original_price": 3.19,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_microwave-butter-popcorn-100g-000000000000634905": {
+        "barcode": "",
+        "name": "Microwave Butter Popcorn 100g",
+        "brand": "SPRINTERS",
+        "size": "100 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/71450616-047f-4952-b41b-7f4909e07a65/Microwave%20Butter%20Popcorn%20100g",
+        "prices": {
+            "ALDI": {
+                "price": 0.89,
+                "original_price": 0.89,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_butter-popcorn-90g-000000000000635229": {
+        "barcode": "",
+        "name": "Butter Popcorn 90g",
+        "brand": "SPRINTERS",
+        "size": "90 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/74f6ea4f-0d69-426c-b52f-1a7ced718c60/Butter%20Popcorn%2090g",
+        "prices": {
+            "ALDI": {
+                "price": 1.75,
+                "original_price": 1.75,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_sweet-and-salty-popcorn-120g-000000000000635245": {
+        "barcode": "",
+        "name": "Sweet and Salty Popcorn 120g",
+        "brand": "SPRINTERS",
+        "size": "120 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/5b6c2917-de20-4826-b66d-eb650dec0f00/Sweet%20and%20Salty%20Popcorn%20120g",
+        "prices": {
+            "ALDI": {
+                "price": 1.75,
+                "original_price": 1.75,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_gourmet-snack-co-chargrilled-tomahawk-steak-flavoured-deli-style-chips-175g-000000000000642217": {
+        "barcode": "",
+        "name": "Chargrilled Tomahawk Steak Flavoured Deli Style Chips 175g",
+        "brand": "BLACKSTONE GOURMET SNACK CO.",
+        "size": "175 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/b70293d9-9210-4435-9ec3-b25ad4056ada/Chargrilled%20Tomahawk%20Steak%20Flavoured%20Deli%20Style%20Chips%20175g",
+        "prices": {
+            "ALDI": {
+                "price": 3.49,
+                "original_price": 3.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_so-natural-foods-vegetable-straws-sour-cream-herb-flavoured-110g-000000000000666192": {
+        "barcode": "",
+        "name": "Vegetable Straws Sour Cream &amp; Herb Flavoured 110g",
+        "brand": "OH SO NATURAL FOODS",
+        "size": "110 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f37c4498-08e8-47f8-9f14-e9835fc0fe8a/Vegetable%20Straws%20Sour%20Cream%20%20Herb%20Flavoured%20110g",
+        "prices": {
+            "ALDI": {
+                "price": 2.99,
+                "original_price": 2.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_so-natural-foods-veggie-crisps-100g-000000000000689823": {
+        "barcode": "",
+        "name": "Veggie Crisps 100g",
+        "brand": "OH SO NATURAL FOODS",
+        "size": "100 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/0b692a2c-17ba-4c92-8f2a-297109e20733/Veggie%20Crisps%20100g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_snack-stack-chips-original-flavour-160g-000000000366033001": {
+        "barcode": "",
+        "name": "Snack Stack Chips Original Flavour 160g",
+        "brand": "SPRINTERS",
+        "size": "160 g",
+        "category": "chips",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/ad3d3e45-1888-4235-b7cd-b8d80ad84d74/Snack%20Stack%20Chips%20Original%20Flavour%20160g",
+        "prices": {
+            "ALDI": {
+                "price": 1.99,
+                "original_price": 1.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_milk-chocolate-block-200g-000000000000285757": {
+        "barcode": "",
+        "name": "Milk Chocolate Block 200g",
+        "brand": "CHOCEUR",
+        "size": "200 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/7f798fd3-4856-42fa-a8dd-d5c992ab9531/Milk%20Chocolate%20Block%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_maoam-joystixx-400g-000000000000287257": {
+        "barcode": "",
+        "name": "Maoam Joystixx 400g",
+        "brand": "MAOAM",
+        "size": "400 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a6cb25e8-6a32-47d7-bee4-76305fb4f95e/Maoam%20Joystixx%20400g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_fine-milk-chocolate-block-180g-000000000000398417": {
+        "barcode": "",
+        "name": "Milk Chocolate Block 180g",
+        "brand": "DAIRY FINE",
+        "size": "180 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/8f2606a3-09b7-4a0b-8ba5-205994c9405e/Milk%20Chocolate%20Block%20180g",
+        "prices": {
+            "ALDI": {
+                "price": 3.49,
+                "original_price": 3.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_naturals-snakes-520g-000000000000400253": {
+        "barcode": "",
+        "name": "Snakes 520g",
+        "brand": "DOMINION NATURALS",
+        "size": "520 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/9d6fb288-d669-4a26-b8f9-760d193c354f/Snakes%20520g",
+        "prices": {
+            "ALDI": {
+                "price": 3.19,
+                "original_price": 3.19,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_naturals-party-mix-520g-000000000000400255": {
+        "barcode": "",
+        "name": "Party Mix 520g",
+        "brand": "DOMINION NATURALS",
+        "size": "520 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a1cdbd31-9888-4a5a-9837-bbb25f662ff0/Party%20Mix%20520g",
+        "prices": {
+            "ALDI": {
+                "price": 3.19,
+                "original_price": 3.19,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_naturals-liquorice-twists-300g-000000000000402525": {
+        "barcode": "",
+        "name": "Liquorice Twists 300g",
+        "brand": "DOMINION NATURALS",
+        "size": "300 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a480e295-a9e4-4c58-8b95-265ee1b8c716/Liquorice%20Twists%20300g",
+        "prices": {
+            "ALDI": {
+                "price": 2.49,
+                "original_price": 2.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_naturals-milk-chocolate-coated-liquorice-twists-270g-000000000000402533": {
+        "barcode": "",
+        "name": "Milk Chocolate Coated Liquorice Twists 270g",
+        "brand": "DOMINION NATURALS",
+        "size": "270 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/4739e0e9-6ba2-4207-a1b5-5db17f1b913d/Milk%20Chocolate%20Coated%20Liquorice%20Twists%20270g",
+        "prices": {
+            "ALDI": {
+                "price": 2.49,
+                "original_price": 2.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_fine-dark-chocolate-block-180g-000000000000403926": {
+        "barcode": "",
+        "name": "Dark Chocolate Block 180g",
+        "brand": "DAIRY FINE",
+        "size": "180 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/b75c43db-043a-4097-a5b8-9fc9061ee6bc/Dark%20Chocolate%20Block%20180g",
+        "prices": {
+            "ALDI": {
+                "price": 3.49,
+                "original_price": 3.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_van-melle-chupa-chups-lollipop-12g-000000000000405589": {
+        "barcode": "",
+        "name": "Chupa Chups Lollipop 12g",
+        "brand": "PERFETTI VAN MELLE",
+        "size": "12 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/c134c784-9f0f-4a9f-8b3d-9cb3e5172456/Chupa%20Chups%20Lollipop%2012g",
+        "prices": {
+            "ALDI": {
+                "price": 0.65,
+                "original_price": 0.65,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_joe-push-pops-15g-000000000000513797": {
+        "barcode": "",
+        "name": "Push Pops 15g",
+        "brand": "BAZOOKA JOE",
+        "size": "15 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/8c9293c6-deb5-44c1-af33-7f7cd9707bcc/Push%20Pops%2015g",
+        "prices": {
+            "ALDI": {
+                "price": 1.69,
+                "original_price": 1.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_kat-kitkat-18-pack-252g-000000000000522529": {
+        "barcode": "",
+        "name": "KitKat 18 Pack 252g",
+        "brand": "KIT KAT",
+        "size": "252 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/977b070d-a0a5-4ca2-a0b4-5be40d77c425/KitKat%2018%20Pack%20252g",
+        "prices": {
+            "ALDI": {
+                "price": 7.99,
+                "original_price": 7.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_milk-chocolate-balls-140g-000000000000527387": {
+        "barcode": "",
+        "name": "Milk Chocolate Balls 140g",
+        "brand": "MALTESERS",
+        "size": "140 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/24d6ab74-218b-4252-bbff-59437fc58528/Milk%20Chocolate%20Balls%20140g",
+        "prices": {
+            "ALDI": {
+                "price": 4.79,
+                "original_price": 4.79,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_titan-11-pack-198g-000000000000557110": {
+        "barcode": "",
+        "name": "Titan 11 Pack 198g",
+        "brand": "DAIRYFINE",
+        "size": "198 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/6c83801d-3db1-4dc4-869e-7e973593217c/Titan%2011%20Pack%20198g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_dairy-milk-chocolate-bar-50g-000000000000589029": {
+        "barcode": "",
+        "name": "Dairy Milk Chocolate Bar 50g",
+        "brand": "CADBURY",
+        "size": "50 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/704edf76-5622-4f4e-a0b8-df1216677064/Dairy%20Milk%20Chocolate%20Bar%2050g",
+        "prices": {
+            "ALDI": {
+                "price": 1.99,
+                "original_price": 1.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_naturals-liquorice-chocolate-coated-bullets-200g-000000000000630797": {
+        "barcode": "",
+        "name": "Liquorice Chocolate Coated Bullets 200g",
+        "brand": "DOMINION NATURALS",
+        "size": "200 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/23542dfb-9071-419c-b882-6fb796ce3224/Liquorice%20Chocolate%20Coated%20Bullets%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 2.29,
+                "original_price": 2.29,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_kat-kitkat-42g-000000000000634616": {
+        "barcode": "",
+        "name": "KitKat 42g",
+        "brand": "KIT KAT",
+        "size": "42 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/8c7c3903-2775-4d99-9c21-bac8fd45882e/KitKat%2042g",
+        "prices": {
+            "ALDI": {
+                "price": 1.99,
+                "original_price": 1.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_pistachio-bombs-100g-000000000000670539": {
+        "barcode": "",
+        "name": "Pistachio Bombs 100g",
+        "brand": "HUGOS",
+        "size": "100 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/c1d0039b-f721-4e24-82d7-e18322ea0784/Pistachio%20Bombs%20100g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_dairy-milk-chocolate-315g-000000000000670795": {
+        "barcode": "",
+        "name": "Dairy Milk Chocolate 315g",
+        "brand": "CADBURY",
+        "size": "315 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/882e315b-c2a0-4ca9-b67b-0b2d59728d37/Dairy%20Milk%20Chocolate%20315g",
+        "prices": {
+            "ALDI": {
+                "price": 8.49,
+                "original_price": 8.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_favourites-265g-000000000000674226": {
+        "barcode": "",
+        "name": "Favourites 265g",
+        "brand": "CADBURY",
+        "size": "265 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/047a9cb9-dddf-45a1-989b-2dc670ad2415/Favourites%20265g",
+        "prices": {
+            "ALDI": {
+                "price": 6.99,
+                "original_price": 6.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_mixed-sherbert-fizz-stix-lollies-200g-000000000000681040": {
+        "barcode": "",
+        "name": "Mixed Sherbert Fizz Stix Lollies 200g",
+        "brand": "LIFESAVER",
+        "size": "200 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/1095c79e-4f34-428c-9fc7-2da6c8c3ab2f/Mixed%20Sherbert%20Fizz%20Stix%20Lollies%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 3.49,
+                "original_price": 3.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_lifesavers-pastilles-180g-000000000000702183": {
+        "barcode": "",
+        "name": "Lifesavers Pastilles 180g",
+        "brand": "LIFESAVER",
+        "size": "180 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/1a52d09d-d62a-4778-8c06-2068c8742082/Lifesavers%20Pastilles%20180g",
+        "prices": {
+            "ALDI": {
+                "price": 2.79,
+                "original_price": 2.79,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_cream-candies-42g-000000000114373005": {
+        "barcode": "",
+        "name": "Cream Candies 42g",
+        "brand": "STORCK",
+        "size": "42 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/1ffe86bd-5eca-4a6d-807a-98e74d46b6ac/Cream%20Candies%2042g",
+        "prices": {
+            "ALDI": {
+                "price": 2.49,
+                "original_price": 2.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_chocolate-flavoured-caramel-cream-candies-42g-000000000114373006": {
+        "barcode": "",
+        "name": "Chocolate Flavoured Caramel Cream Candies 42g",
+        "brand": "STORCK",
+        "size": "42 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/9b278132-c390-4450-b4dd-3a031819958c/Chocolate%20Flavoured%20Caramel%20Cream%20Candies%2042g",
+        "prices": {
+            "ALDI": {
+                "price": 2.49,
+                "original_price": 2.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_coffee-cream-chocolate-block-200g-000000000294108002": {
+        "barcode": "",
+        "name": "Coffee &amp; Cream Chocolate Block 200g",
+        "brand": "CHOCEUR",
+        "size": "200 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/2b566125-3d7e-4a63-933f-f3d771446b44/Coffee%20%20Cream%20Chocolate%20Block%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_milk-white-chocolate-block-200g-000000000294108003": {
+        "barcode": "",
+        "name": "Milk &amp; White Chocolate Block 200g",
+        "brand": "CHOCEUR",
+        "size": "200 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/82c878d2-5711-48da-a40d-70035a5d1339/Milk%20%20White%20Chocolate%20Block%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_liviano-hazelnut-creme-150g-000000000294628001": {
+        "barcode": "",
+        "name": "Liviano Hazelnut Cr\u00e8me 150g",
+        "brand": "CHOCEUR",
+        "size": "150 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/042fb894-5cf4-4adb-a2f1-b7ad6b077c69/Liviano%20Hazelnut%20Crme%20150g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_liviano-hazelnut-cocoa-150g-000000000294628002": {
+        "barcode": "",
+        "name": "Liviano Hazelnut Cocoa 150g",
+        "brand": "CHOCEUR",
+        "size": "150 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/b8511789-8540-4551-b46c-8ecddf329ec5/Liviano%20Hazelnut%20Cocoa%20150g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_liviano-coconut-creme-150g-000000000294628003": {
+        "barcode": "",
+        "name": "Liviano Coconut Cr\u00e8me 150g",
+        "brand": "CHOCEUR",
+        "size": "150 g",
+        "category": "chocolate",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/24510f24-323c-4c9f-b81d-c07aad1c4bce/Liviano%20Coconut%20Crme%20150g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_milk-coconut-chocolate-block-200g-000000000304751001": {
+        "barcode": "",
+        "name": "Milk Coconut Chocolate Block 200g",
+        "brand": "CHOCEUR",
+        "size": "200 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/91a94156-5c1f-4bd6-a187-e3d0e8e1c3aa/Milk%20Coconut%20Chocolate%20Block%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
     }
 }
