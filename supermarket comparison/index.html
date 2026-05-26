@@ -228,9 +228,15 @@
             gap: 6px;
         }
 
-        .mcard-emoji {
-            font-size: 44px;
-            line-height: 1;
+        .mcard-img {
+            width: 76px;
+            height: 76px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #fff;
+            padding: 4px;
+            border: 1px solid rgba(0, 200, 83, 0.08);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
 
         .mcard-name {
@@ -1109,9 +1115,66 @@
             }
         }
 
-        // Category emoji lookup for marquee cards
-        const CAT_EMOJI = {};
-        ALL_CATEGORIES.forEach(c => { CAT_EMOJI[c.key] = c.icon; });
+        // Product image lookup (maps to local assets or high-quality Unsplash category photos)
+        function imageForDeal(deal) {
+            const n = deal.name.toLowerCase();
+            
+            // Local high-fidelity mockup images
+            if (n.includes('milk')) return '/milk.png';
+            if (n.includes('chocolate') || n.includes('cadbury')) return '/cadbury.png';
+            if (n.includes('chips') || n.includes('smith')) return '/smiths.png';
+
+            // High-quality category images mapping (using unsplash food/grocery images)
+            if (n.includes('bread') || n.includes('toast')) 
+                return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('egg')) 
+                return 'https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('butter')) 
+                return 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('cheese')) 
+                return 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('yoghurt') || n.includes('yogurt')) 
+                return 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('cereal') || n.includes('oats') || n.includes('weet-bix')) 
+                return 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('coffee') || n.includes('moccona')) 
+                return 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('juice') || n.includes('orange juice')) 
+                return 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('water')) 
+                return 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('coke') || n.includes('cola') || n.includes('soft drink')) 
+                return 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('beer')) 
+                return 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('laundry') || n.includes('clean')) 
+                return 'https://images.unsplash.com/photo-1610557892470-76d747eed2f1?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('toilet') || n.includes('tissues')) 
+                return 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('shampoo') || n.includes('toothpaste') || n.includes('deodorant')) 
+                return 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('chicken') || n.includes('beef') || n.includes('meat')) 
+                return 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('fish') || n.includes('seafood')) 
+                return 'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('pasta')) 
+                return 'https://images.unsplash.com/photo-1612966608967-312ba5987236?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('rice')) 
+                return 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('oil')) 
+                return 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('sauce') || n.includes('condiment')) 
+                return 'https://images.unsplash.com/photo-1618331835717-801e976710b2?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('pet') || n.includes('dog') || n.includes('cat')) 
+                return 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('frozen') || n.includes('ice cream')) 
+                return 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=160&auto=format&fit=crop&q=80';
+            if (n.includes('vegemite') || n.includes('spread') || n.includes('jam')) 
+                return 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=160&auto=format&fit=crop&q=80';
+
+            // Generic grocery fallback
+            return 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=160&auto=format&fit=crop&q=80';
+        }
 
         function emojiForDeal(deal) {
             const n = deal.name.toLowerCase();
@@ -1129,7 +1192,7 @@
         }
 
         function buildMarqueeCard(deal) {
-            const emoji = emojiForDeal(deal);
+            const imgUrl = imageForDeal(deal);
             // Truncate name to ~22 chars for card
             const shortName = deal.name.length > 22 ? deal.name.slice(0, 21) + '…' : deal.name;
             const shortBadge = deal.badge.length > 18 ? deal.badge.slice(0, 17) + '…' : deal.badge;
@@ -1159,7 +1222,7 @@
             return `
                 <div class="marquee-card">
                     <div class="mcard-hero">
-                        <span class="mcard-emoji">${emoji}</span>
+                        <img class="mcard-img" src="${imgUrl}" alt="${deal.name}">
                         <span class="mcard-name">${shortName}</span>
                         <span class="mcard-brand">${deal.brand}</span>
                         <span class="mcard-badge">${shortBadge}</span>
@@ -1259,9 +1322,12 @@
 
             card.innerHTML = `
                 <div class="deal-badge">${deal.badge}</div>
-                <div class="product-meta">
-                    <div class="product-name">${deal.name}</div>
-                    <div class="product-brand">${deal.brand}</div>
+                <div style="display: flex; gap: 14px; margin-bottom: 12px; align-items: center;">
+                    <img src="${imageForDeal(deal)}" style="width: 60px; height: 60px; object-fit: contain; border-radius: 10px; border: 1px solid var(--border); background: #F8FAFC; padding: 4px;" alt="${deal.name}">
+                    <div class="product-meta" style="margin-bottom: 0; flex: 1;">
+                        <div class="product-name" style="max-width: 100%; font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.3;">${deal.name}</div>
+                        <div class="product-brand" style="font-size: 11px; color: var(--text-muted); font-weight: 600; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px;">${deal.brand}</div>
+                    </div>
                 </div>
                 <div class="store-comparison-list">
                     ${storeRowsHtml}
