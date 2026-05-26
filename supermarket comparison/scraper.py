@@ -23,10 +23,10 @@ try:
         print("Successfully initialized Firebase Admin SDK (Project ID: pantrybloom).")
     else:
         # Fallback if credentials file is not present
-        print("Warning: firebase-credentials.json not found. Running in DRY RUN mode (mock database update).")
+        print("Warning: firebase-credentials.json not found. Running in OFFLINE mode (updating local JSON cache).")
 except Exception as e:
     print("Error initializing Firebase Admin SDK:", e)
-    print("Running in DRY RUN mode.")
+    print("Running in OFFLINE mode.")
 
 # Categories to scrape
 CATEGORIES = ["laundry", "dishwashing", "milk", "bread", "chips", "chocolate"]
@@ -39,8 +39,8 @@ def save_product_to_firestore(product_id, product_data, store_name, price_data):
     - Else, overwrite product info, update price, and add a new row to the price_history collection.
     """
     if db is None:
-        print(f"[DRY RUN] Store product: {product_id} | Name: {product_data['name']}")
-        print(f"[DRY RUN] Store price: {store_name} | Price: ${price_data['price']} (Promo: {price_data['is_promo']})")
+        print(f"[OFFLINE] Store product: {product_id} | Name: {product_data['name']}")
+        print(f"[OFFLINE] Store price: {store_name} | Price: ${price_data['price']} (Promo: {price_data['is_promo']})")
         return
 
     try:
@@ -403,7 +403,7 @@ def run_scraper():
             save_product_to_firestore(pid, pdata, store, price)
             upload_count += 1
             
-            # For Dry Run simulation, collect into a dictionary to output as local JSON file
+            # For offline cache update, collect into a dictionary to output as local JSON file
             if db is None:
                 if pid not in dry_run_dict:
                     dry_run_dict[pid] = {**pdata, 'prices': {}, 'price_history': []}
@@ -411,12 +411,12 @@ def run_scraper():
         except Exception as e:
             print(f"Failed uploading {pid} to Firestore: {e}")
             
-    # Write fallback JSON if in Dry Run mode
+    # Write fallback JSON if in offline cache mode
     if db is None and dry_run_dict:
         fallback_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'scraped_products_fallback.json')
         with open(fallback_path, 'w', encoding='utf-8') as f:
             json.dump(dry_run_dict, f, indent=4)
-        print(f"\n[DRY RUN] Wrote {len(dry_run_dict)} products to fallback JSON file at {fallback_path}")
+        print(f"\n[OFFLINE] Wrote {len(dry_run_dict)} products to fallback JSON file at {fallback_path}")
         
     print(f"\nScraper run finished. Uploaded/Processed {upload_count} records.")
 

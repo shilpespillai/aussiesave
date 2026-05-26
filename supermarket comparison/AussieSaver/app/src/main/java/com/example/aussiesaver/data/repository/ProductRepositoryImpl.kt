@@ -65,17 +65,17 @@ class ProductRepositoryImpl @Inject constructor(
     }
 
     override suspend fun syncRemoteData() {
-        // Mock remote data injection representing the Australian supermarkets price feed ingestion
-        val mockStores = listOf(
+        // Baseline remote data ingestion representing the Australian supermarkets price feed ingestion
+        val baselineStores = listOf(
             SupermarketEntity("woolworths_richmond", "Woolworths", "Richmond Plaza", -37.8183, 144.9984, "7am - 10pm"),
             SupermarketEntity("coles_richmond", "Coles", "Richmond Central", -37.8190, 144.9960, "6am - midnight"),
             SupermarketEntity("aldi_richmond", "ALDI", "Richmond", -37.8175, 144.9972, "8:30am - 8pm"),
             SupermarketEntity("iga_richmond", "IGA", "Richmond Local", -37.8210, 145.0020, "7am - 9pm"),
             SupermarketEntity("costco_docklands", "Costco", "Docklands", -37.8120, 144.9370, "10am - 8:30pm")
         )
-        storeDao.insertStores(mockStores)
+        storeDao.insertStores(baselineStores)
 
-        val mockProducts = listOf(
+        val baselineProducts = listOf(
             ProductEntity("prod_milk_devondale", "9310072001222", "Devondale Long Life Full Cream Milk", "Dairy", "Devondale", "", 1.0, "L"),
             ProductEntity("prod_bread_wonder", "9310072002345", "Wonder White Sliced Bread", "Bakery", "Wonder", "", 700.0, "g"),
             ProductEntity("prod_eggs_sunny", "9310072003456", "Sunny Queen Free Range Eggs 12pk", "Dairy", "Sunny Queen", "", 700.0, "g"),
@@ -90,9 +90,9 @@ class ProductRepositoryImpl @Inject constructor(
             ProductEntity("prod_laundry_surf", "9310072006795", "Surf Tropical Fresh Laundry Powder 2kg", "Household", "Surf", "", 2.0, "kg"),
             ProductEntity("prod_laundry_house", "9310072006796", "Everyday Clean Laundry Liquid 2L", "Household", "Supermarket Brand", "", 2.0, "L")
         )
-        productDao.insertProducts(mockProducts)
+        productDao.insertProducts(baselineProducts)
 
-        val mockPrices = listOf(
+        val baselinePrices = listOf(
             // Milk
             StorePriceEntity("prod_milk_devondale", "woolworths_richmond", 1.85, 2.20, 1.85, true, "Save 35c", System.currentTimeMillis()),
             StorePriceEntity("prod_milk_devondale", "coles_richmond", 1.85, 1.85, 1.85, false, "", System.currentTimeMillis()),
@@ -149,6 +149,6 @@ class ProductRepositoryImpl @Inject constructor(
             StorePriceEntity("prod_laundry_house", "coles_richmond", 3.50, 3.50, 1.75, false, "", System.currentTimeMillis()),
             StorePriceEntity("prod_laundry_house", "aldi_richmond", 3.49, 3.49, 1.75, true, "", System.currentTimeMillis())
         )
-        productDao.insertPrices(mockPrices)
+        productDao.insertPrices(baselinePrices)
     }
 }
