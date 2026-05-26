@@ -18,7 +18,7 @@ CATALOG = {
     "laundry": [
         {"name": "Dynamo Professional Laundry Liquid 1.8L",    "brand": "Dynamo",         "size": "1.8L",  "base_price": 27.00},
         {"name": "Omo Active Clean Laundry Liquid 2L",         "brand": "Omo",            "size": "2L",    "base_price": 24.00},
-        {"name": "Cold Power Regular Laundry Liquid 2L",       "brand": "Cold Power",     "size": "2L",    "base_price": 22.00},
+        {"name": "Cold Power Regular Laundry Liquid 2L",       "brand": "Cold Power",     "size": "2L",    "base_price": 26.00},
         {"name": "Biozet Attack Regular Laundry Powder 2kg",   "brand": "Biozet Attack",  "size": "2kg",   "base_price": 24.00},
         {"name": "Radiant Colour Care Laundry Liquid 2L",      "brand": "Radiant",        "size": "2L",    "base_price": 20.00},
         {"name": "Fab Essential Laundry Liquid 2L",            "brand": "Fab",            "size": "2L",    "base_price": 12.00},
