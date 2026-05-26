@@ -1122,11 +1122,38 @@
         function imageForDeal(deal) {
             const cat = (deal.category || '').toLowerCase();
             const n = deal.name.toLowerCase();
+            const b = (deal.brand || '').toLowerCase();
+            const isStoreBrand = b.includes('woolworths') || b.includes('coles') || b.includes('aldi') || b.includes('everyday') || b.includes('smart buy') || n.includes('woolworths') || n.includes('coles') || n.includes('aldi');
             
-            // Local high-fidelity mockup images
-            if (cat === 'milk' || n.includes('milk')) return '/milk.png';
-            if (cat === 'chocolate' || n.includes('chocolate') || n.includes('cadbury')) return '/cadbury.png';
-            if (cat === 'chips' || n.includes('chips') || n.includes('smith')) return '/smiths.png';
+            // 1. Milk
+            if (cat === 'milk' || n.includes('milk')) {
+                if (b.includes('devondale') && !isStoreBrand) return '/milk.png';
+                // Generic milk bottle
+                return 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=160&auto=format&fit=crop&q=80';
+            }
+
+            // 2. Chocolate
+            if (cat === 'chocolate' || n.includes('chocolate') || n.includes('cadbury')) {
+                if (b.includes('cadbury') && !isStoreBrand) return '/cadbury.png';
+                // Generic chocolate bar
+                return 'https://images.unsplash.com/photo-1511381939415-e4401546383a?w=160&auto=format&fit=crop&q=80';
+            }
+
+            // 3. Chips
+            if (cat === 'chips' || n.includes('chips') || n.includes('smith')) {
+                if (b.includes('smith') && !isStoreBrand) return '/smiths.png';
+                // Generic chips bowl
+                return 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=160&auto=format&fit=crop&q=80';
+            }
+
+            // 4. Cola / Coke
+            if (cat === 'coke' || cat === 'cola' || n.includes('coke') || n.includes('cola') || n.includes('soft drink')) {
+                if ((b.includes('coca-cola') || b.includes('coke') || n.includes('coca-cola') || n.includes('pepsi')) && !isStoreBrand) {
+                    return 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=160&auto=format&fit=crop&q=80';
+                }
+                // Generic cola glass
+                return 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=160&auto=format&fit=crop&q=80';
+            }
 
             // High-quality category images mapping (using unsplash food/grocery images)
             if (cat === 'bread' || n.includes('bread') || n.includes('toast')) 
@@ -1147,8 +1174,6 @@
                 return 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=160&auto=format&fit=crop&q=80';
             if (cat === 'water' || n.includes('water')) 
                 return 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=160&auto=format&fit=crop&q=80';
-            if (cat === 'coke' || cat === 'cola' || n.includes('coke') || n.includes('cola') || n.includes('soft drink')) 
-                return 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=160&auto=format&fit=crop&q=80';
             if (cat === 'beer' || n.includes('beer')) 
                 return 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=160&auto=format&fit=crop&q=80';
             if (cat === 'laundry' || cat === 'dishwashing' || cat === 'cleaning' || n.includes('laundry') || n.includes('dishwashing') || n.includes('clean')) 
