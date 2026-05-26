@@ -1217,16 +1217,19 @@
                     ? `<span class="mcard-orig">$${s.original.toFixed(2)}</span>`
                     : '';
                 const bestPill = s.isBest ? `<span class="mcard-best-pill">BEST</span>` : '';
+                const priceHtml = s.price !== null
+                    ? `<span class="mcard-price">$${s.price.toFixed(2)}</span>`
+                    : `<span style="font-size:9.5px;color:var(--text-muted);font-weight:600;text-transform:uppercase;">Not present</span>`;
                 rowsHtml += `
                     <div class="mcard-row ${s.isBest ? 'best' : ''}">
                         <div class="mcard-store">
-                            <span class="mcard-dot" style="background:${storeColor(s.logoClass)};"></span>
+                            <span class="mcard-dot" style="background:${s.price !== null ? storeColor(s.logoClass) : '#CBD5E1'};"></span>
                             ${s.logo === 'W' ? 'Woolies' : s.logo === 'C' ? 'Coles' : 'ALDI'}
                         </div>
                         <div class="mcard-price-wrap">
                             <div style="display:flex;align-items:center;gap:3px;">
                                 ${origHtml}
-                                <span class="mcard-price">$${s.price.toFixed(2)}</span>
+                                ${priceHtml}
                             </div>
                             ${bestPill}
                         </div>
@@ -1320,15 +1323,18 @@
 
             let storeRowsHtml = '';
             deal.stores.forEach(store => {
+                const priceHtml = store.price !== null
+                    ? `${store.original ? `<span class="original-price">$${store.original.toFixed(2)}</span>` : ''}
+                       <span class="current-price">$${store.price.toFixed(2)}</span>`
+                    : `<span class="current-price" style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;">Not present</span>`;
                 storeRowsHtml += `
                     <div class="store-row ${store.isBest ? 'best-deal' : ''}">
                         <div class="store-identity">
-                            <span class="store-badge ${store.logoClass}">${store.logo}</span>
+                            <span class="store-badge ${store.price !== null ? store.logoClass : ''}" style="${store.price === null ? 'background-color:#CBD5E1;' : ''}">${store.logo}</span>
                             <span>${store.name}</span>
                         </div>
                         <div class="store-prices">
-                            ${store.original ? `<span class="original-price">$${store.original.toFixed(2)}</span>` : ''}
-                            <span class="current-price">$${store.price.toFixed(2)}</span>
+                            ${priceHtml}
                         </div>
                     </div>
                 `;
@@ -1394,23 +1400,26 @@
                 }
 
                 if (product) {
-                    // Find cheapest store for item
-                    let cheapest = product.stores.reduce((min, current) => current.price < min.price ? current : min, product.stores[0]);
-                    splitTotal += cheapest.price;
+                    // Filter to available stores where the item is present
+                    const availableStores = product.stores.filter(s => s.price !== null);
+                    if (availableStores.length > 0) {
+                        let cheapest = availableStores.reduce((min, current) => current.price < min.price ? current : min, availableStores[0]);
+                        splitTotal += cheapest.price;
 
-                    // Add to lists
-                    const row = document.createElement('div');
-                    row.style.display = 'flex';
-                    row.style.justify = 'space-between';
-                    row.innerHTML = `<span>${product.name}</span><span style="font-weight:700; color:#0E5E3A;">${cheapest.name.split(' ')[0]} - $${cheapest.price.toFixed(2)}</span>`;
-                    listContainer.appendChild(row);
+                        // Add to lists
+                        const row = document.createElement('div');
+                        row.style.display = 'flex';
+                        row.style.justify = 'space-between';
+                        row.innerHTML = `<span>${product.name}</span><span style="font-weight:700; color:#0E5E3A;">${cheapest.name.split(' ')[0]} - $${cheapest.price.toFixed(2)}</span>`;
+                        listContainer.appendChild(row);
 
-                    // Sum single store totals
-                    product.stores.forEach(store => {
-                        const storeKey = store.name.split(' ')[0]; // Woolworths, Coles, ALDI
-                        if (!storeSums[storeKey]) storeSums[storeKey] = 0;
-                        storeSums[storeKey] += store.price;
-                    });
+                        // Sum single store totals
+                        availableStores.forEach(store => {
+                            const storeKey = store.name.split(' ')[0]; // Woolworths, Coles, ALDI
+                            if (!storeSums[storeKey]) storeSums[storeKey] = 0;
+                            storeSums[storeKey] += store.price;
+                        });
+                    }
                 }
             });
 
@@ -1477,15 +1486,18 @@
 
                     let html = `<strong>Found ${data.length} products for "${keyword || query}".</strong><br><br>`;
                     top.forEach(p => {
-                        const bestStore = p.stores.reduce((a, b) => a.price < b.price ? a : b);
-                        const worstStore = p.stores.reduce((a, b) => a.price > b.price ? a : b);
-                        const saving = (worstStore.price - bestStore.price).toFixed(2);
-                        html += `🛒 <strong>${p.name}</strong><br>`;
-                        html += `&nbsp;&nbsp;✅ Best: <strong>${bestStore.name}</strong> @ <strong>$${bestStore.price.toFixed(2)}</strong>`;
-                        if (parseFloat(saving) > 0) {
-                            html += ` (save $${saving} vs ${worstStore.name})`;
+                        const availableStores = p.stores.filter(s => s.price !== null);
+                        if (availableStores.length > 0) {
+                            const bestStore = availableStores.reduce((a, b) => a.price < b.price ? a : b);
+                            const worstStore = availableStores.reduce((a, b) => a.price > b.price ? a : b);
+                            const saving = (worstStore.price - bestStore.price).toFixed(2);
+                            html += `🛒 <strong>${p.name}</strong><br>`;
+                            html += `&nbsp;&nbsp;✅ Best: <strong>${bestStore.name}</strong> @ <strong>$${bestStore.price.toFixed(2)}</strong>`;
+                            if (parseFloat(saving) > 0) {
+                                html += ` (save $${saving} vs ${worstStore.name})`;
+                            }
+                            html += `<br><br>`;
                         }
-                        html += `<br><br>`;
                     });
 
                     if (data.length > 3) {
