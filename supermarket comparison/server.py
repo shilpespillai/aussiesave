@@ -587,65 +587,106 @@ def resolve_catalog_key(query: str):
     return None
 
 
+def get_store_availability(brand_name, product_name):
+    brand_lower = brand_name.lower()
+    name_lower = product_name.lower()
+    
+    # Woolworths private label
+    if "woolworths" in brand_lower or "woolworths" in name_lower or "everyday" in brand_lower:
+        return ["Woolworths"]
+        
+    # Coles private label
+    if "coles" in brand_lower or "coles" in name_lower or "smart buy" in name_lower:
+        return ["Coles"]
+        
+    # ALDI private label / exclusive brands
+    aldi_brands = ["aldi", "almat", "emporium", "lazzio", "lacura", "harvest morn", "moser roth", "confidence", "dairy road", "moose head"]
+    if any(ab in brand_lower or ab in name_lower for ab in aldi_brands):
+        return ["ALDI"]
+        
+    # Standard name brands are available at Woolworths and Coles (not ALDI)
+    return ["Woolworths", "Coles"]
+
+
 def make_result(template, query, idx, category=None):
     base = template["base_price"]
+    brand = template["brand"]
+    name = template["name"]
+
+    # Determine availability
+    avail = get_store_availability(brand, name)
 
     woolies_price = base
     coles_price = round(base * random.choice([0.94, 0.97, 1.0, 1.03, 1.06]), 2)
     aldi_price = round(base * random.choice([0.80, 0.83, 0.86, 0.89]), 2)
+
+    # Filter to available prices to calculate min_price
+    prices = []
+    if "Woolworths" in avail:
+        prices.append(woolies_price)
+    if "Coles" in avail:
+        prices.append(coles_price)
+    if "ALDI" in avail:
+        prices.append(aldi_price)
+
+    min_price = min(prices) if prices else base
 
     badge = ""
     woolies_orig = None
     coles_orig = None
 
     promo = random.choice(["woolies_special", "coles_special", "none", "none"])
-    is_home_brand = template["brand"].lower() in ("woolworths", "coles", "aldi")
+    is_home_brand = brand.lower() in ("woolworths", "coles", "aldi")
 
-    if promo == "woolies_special" and not is_home_brand:
+    if promo == "woolies_special" and "Woolworths" in avail and not is_home_brand:
         woolies_price = round(base * 0.50, 2)
         woolies_orig = base
         badge = "Half Price @ Woolies"
-    elif promo == "coles_special" and not is_home_brand:
+        min_price = min(woolies_price, coles_price) if "Coles" in avail else woolies_price
+    elif promo == "coles_special" and "Coles" in avail and not is_home_brand:
         coles_price = round(base * 0.50, 2)
         coles_orig = base
         badge = "Half Price @ Coles"
+        min_price = min(woolies_price, coles_price) if "Woolworths" in avail else coles_price
     else:
-        min_p = min(woolies_price, coles_price, aldi_price)
-        badge = "ALDI Best Deal" if aldi_price == min_p else ("Woolies Special" if woolies_price == min_p else "Coles Special")
+        if "ALDI" in avail:
+            badge = "ALDI Best Deal" if aldi_price == min_price else ("Woolies Special" if woolies_price == min_price else "Coles Special")
+        else:
+            badge = "Woolies Special" if woolies_price == min_price else "Coles Special"
 
-    min_price = min(woolies_price, coles_price, aldi_price)
-
-    stores = [
-        {
+    stores = []
+    if "Woolworths" in avail:
+        stores.append({
             "name": "Woolworths",
             "price": woolies_price,
             "original": woolies_orig,
             "isBest": woolies_price == min_price,
             "logo": "W",
             "logoClass": "bg-woolies"
-        },
-        {
+        })
+    if "Coles" in avail:
+        stores.append({
             "name": "Coles",
             "price": coles_price,
             "original": coles_orig,
             "isBest": coles_price == min_price,
             "logo": "C",
             "logoClass": "bg-coles"
-        },
-        {
+        })
+    if "ALDI" in avail:
+        stores.append({
             "name": "ALDI",
             "price": aldi_price,
             "original": None,
             "isBest": aldi_price == min_price,
             "logo": "A",
             "logoClass": "bg-aldi"
-        }
-    ]
+        })
 
     return {
         "id": f"scraped_{query.replace(' ', '_')}_{idx}",
-        "name": template["name"],
-        "brand": template["brand"],
+        "name": name,
+        "brand": brand,
         "badge": badge,
         "category": category,
         "stores": stores

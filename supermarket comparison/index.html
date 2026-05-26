@@ -1089,11 +1089,12 @@
                     watchlist.map(cat =>
                         fetch('/api/search?q=' + encodeURIComponent(cat))
                             .then(r => r.json())
-                            .catch(() => [])
+                            .then(data => data && data.length > 0 ? data[0] : null)
+                            .catch(() => null)
                     )
                 );
 
-                const deals = results.flat().filter(Boolean);
+                const deals = results.filter(Boolean);
                 
                 // Reset local database so we only show the current watchlist's products
                 database.grocery = [];
@@ -1194,6 +1195,16 @@
             return '#888';
         }
 
+        function selectWatchlistCategory(cat) {
+            if (!cat) return;
+            navigateTab(1);
+            const input = document.getElementById('search-input-field');
+            if (input) {
+                input.value = cat;
+                handleSearch();
+            }
+        }
+
         function buildMarqueeCard(deal) {
             const imgUrl = imageForDeal(deal);
             // Truncate name to ~22 chars for card
@@ -1223,7 +1234,7 @@
             });
 
             return `
-                <div class="marquee-card">
+                <div class="marquee-card" onclick="selectWatchlistCategory('${deal.category || ''}')" style="cursor:pointer;">
                     <div class="mcard-hero">
                         <img class="mcard-img" src="${imgUrl}" alt="${deal.name}">
                         <span class="mcard-name">${shortName}</span>
