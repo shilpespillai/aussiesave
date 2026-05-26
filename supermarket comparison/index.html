@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AussieSaver - Grocery Savings & Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00C853;
+            --primary-light: #E8F7F0;
+            --navy: #0A1931;
+            --navy-light: #1A3054;
+            --wattle: #FFD700;
+            --wattle-light: #FFF9C4;
+            --background: #F6F8FA;
+            --surface: #FFFFFF;
+            --text-dark: #1A202C;
+            --text-muted: #718096;
+            --border: #E2E8F0;
+            --bg-outer: #C3EED6;
+            --header-mint: #7BE3B6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #C3EED6 0%, #A3E4D7 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Mobile Device Frame Mockup */
+        .phone-frame {
+            width: 410px;
+            height: 860px;
+            background-color: var(--background);
+            border-radius: 48px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.18), 0 0 2px 2px rgba(255,255,255,0.4) inset;
+            border: 12px solid #57AA85;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Screen Header Bar */
+        .status-bar {
+            background-color: var(--header-mint);
+            height: 26px;
+            padding: 4px 24px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #0E5E3A;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        /* App Screens container */
+        .screen-container {
+            flex: 1;
+            overflow-y: auto;
+            background-color: var(--background);
+            padding-bottom: 90px;
+        }
+
+        .screen-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Curvy Mint Green Header */
+        .app-header {
+            background-color: var(--header-mint);
+            height: 155px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            padding: 16px 20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.08);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0E5E3A;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--navy);
+        }
+
+        /* Overlapping Savings Card Wrapper */
+        .savings-wrapper {
+            padding: 0 20px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 3;
+            margin-bottom: 24px;
+        }
+
+        .navy-card {
+            background-color: var(--navy);
+            border-radius: 24px;
+            padding: 16px 20px 36px 20px;
+            color: var(--surface);
+            box-shadow: 0 8px 24px rgba(10, 25, 49, 0.15);
+        }
+
+        .navy-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            opacity: 0.95;
+        }
+
+        .navy-card p {
+            font-size: 12px;
+            opacity: 0.75;
+            margin-top: 2px;
+        }
+
+        /* Floating Overlapping Mint Savings Card */
+        .floating-savings-card {
+            background-color: var(--primary-light);
+            border-radius: 20px;
+            padding: 16px;
+            margin-top: -24px;
+            margin-left: 12px;
+            margin-right: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            position: relative;
+            z-index: 4;
+            border: 1px solid rgba(0, 200, 83, 0.12);
+        }
+
+        .floating-savings-card h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .floating-savings-card p {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1A3E2B;
+            margin-top: 2px;
+        }
+
+        .progress-bar-container {
+            background-color: rgba(0, 200, 83, 0.1);
+            border-radius: 10px;
+            height: 6px;
+            width: 80%;
+            margin: 8px auto 0 auto;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            background-color: var(--primary);
+            height: 100%;
+            width: 68%;
+            border-radius: 10px;
+        }
+
+        /* ── Marquee Carousel ───────────────────────────────────────── */
+        .marquee-outer {
+            overflow-x: auto;
+            width: 100%;
+            padding: 4px 0 12px 0;
+            cursor: grab;
+            user-select: none;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .marquee-outer::-webkit-scrollbar {
+            display: none;
+        }
+        .marquee-outer:active { cursor: grabbing; }
+
+        .marquee-track {
+            display: flex;
+            gap: 12px;
+            width: max-content;
+            padding: 0 20px;
+        }
+
+        .marquee-card {
+            width: 167px;
+            background: var(--surface);
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+            flex-shrink: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .mcard-hero {
+            background: linear-gradient(145deg, #f0faf5, #e2f5eb);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 10px 14px;
+            position: relative;
+            gap: 6px;
+        }
+
+        .mcard-emoji {
+            font-size: 44px;
+            line-height: 1;
+        }
+
+        .mcard-name {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--navy);
+            text-align: center;
+            line-height: 1.25;
+        }
+
+        .mcard-brand {
+            font-size: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .mcard-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--wattle);
+            color: #7E5109;
+            font-size: 8px;
+            font-weight: 900;
+            padding: 2.5px 6px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .mcard-table {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 12px 12px;
+            gap: 6px;
+        }
+
+        .mcard-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11.5px;
+        }
+
+        .mcard-store {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .mcard-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .mcard-price-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .mcard-price {
+            font-weight: 800;
+            font-size: 12px;
+            color: var(--text-dark);
+        }
+
+        .mcard-row.best .mcard-price {
+            color: #0E5E3A;
+        }
+
+        .mcard-best-pill {
+            background: #00C853;
+            color: #fff;
+            font-size: 7px;
+            font-weight: 900;
+            padding: 1px 4px;
+            border-radius: 4px;
+            margin-top: 1px;
+            text-transform: uppercase;
+        }
+
+        .mcard-orig {
+            font-size: 9px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        /* High-Fidelity Comparison Card (Search view) */
+        .premium-deal-card {
+            background-color: var(--surface);
+            border: 2px solid var(--primary);
+            border-radius: 24px;
+            padding: 18px;
+            margin-bottom: 16px;
+            position: relative;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+        }
+
+        .deal-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background-color: #FFF9C4;
+            border: 1px dashed #F5B041;
+            color: #7E5109;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+
+        .product-meta {
+            margin-bottom: 12px;
+        }
+
+        .product-name {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.3;
+            max-width: 75%;
+        }
+
+        .product-brand {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .store-comparison-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .store-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 12px;
+            background-color: #F8FAFC;
+            border: 1px solid transparent;
+        }
+
+        .store-row.best-deal {
+            background-color: var(--primary-light);
+            border: 1px solid rgba(0, 200, 83, 0.2);
+        }
+
+        .store-identity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--text-dark);
+        }
+
+        .store-badge {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 900;
+            color: #fff;
+        }
+        .bg-woolies { background-color: #377B2B; }
+        .bg-coles { background-color: #E01A22; }
+        .bg-aldi { background-color: #002C6C; }
+
+        .store-prices {
+            text-align: right;
+        }
+
+        .current-price {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .store-row.best-deal .current-price {
+            color: #0E5E3A;
+        }
+
+        .original-price {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-right: 4px;
+        }
+
+        /* Screen Views */
+        .tab-view {
+            display: none;
+        }
+        .tab-view.active-view {
+            display: block;
+        }
+
+        /* Search input elements */
+        .search-container-box {
+            padding: 20px;
+        }
+        .search-bar-input-box {
+            display: flex;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 12px 16px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search-bar-input-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            margin-left: 10px;
+            color: var(--text-dark);
+        }
+
+        /* Chat assistant elements */
+        .chat-container-box {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: calc(860px - 98px);
+        }
+        .chat-messages-scroll {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .chat-bubble {
+            max-width: 80%;
+            padding: 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .chat-bubble.assistant {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-dark);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .chat-bubble.user {
+            background-color: var(--navy);
+            color: var(--surface);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-input-bar {
+            display: flex;
+            gap: 8px;
+        }
+        .chat-input-field {
+            flex: 1;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 12px 16px;
+            font-size: 13px;
+            outline: none;
+            background: var(--surface);
+        }
+        .chat-send-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Add to list action */
+        .add-to-basket-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+        }
+        .btn-add-action {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        /* ── Watchlist Slide-Up Sheet ─────────────────────────── */
+        .watchlist-overlay {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 25, 49, 0.55);
+            z-index: 200;
+            border-radius: 36px;
+        }
+        .watchlist-overlay.open { display: block; }
+
+        .watchlist-sheet {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-radius: 28px 28px 0 0;
+            padding: 0 0 90px 0;
+            max-height: 78%;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+            box-shadow: 0 -8px 32px rgba(10,25,49,0.18);
+            z-index: 210;
+        }
+        .watchlist-sheet.open { transform: translateY(0); }
+
+        .sheet-handle {
+            width: 40px;
+            height: 4px;
+            background: #E2E8F0;
+            border-radius: 2px;
+            margin: 12px auto 0;
+            flex-shrink: 0;
+        }
+
+        .sheet-header {
+            padding: 16px 20px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .sheet-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .sheet-subtitle {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .sheet-body {
+            overflow-y: auto;
+            flex: 1;
+            padding: 16px 20px;
+        }
+
+        .sheet-body::-webkit-scrollbar { display: none; }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .cat-chip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 12px 6px;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            background: #F8FAFC;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            user-select: none;
+            position: relative;
+        }
+
+        .cat-chip.selected {
+            background: #E8F7F0;
+            border-color: var(--primary);
+        }
+
+        .cat-chip .chip-icon {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .cat-chip .chip-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .cat-chip.selected .chip-label { color: #0E5E3A; }
+
+        .cat-chip .chip-check {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            font-size: 8px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cat-chip.selected .chip-check { display: flex; }
+
+        .sheet-footer {
+            padding: 14px 20px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+            background: #fff;
+        }
+
+        .btn-reset {
+            flex: 1;
+            border: 2px solid var(--border);
+            background: transparent;
+            border-radius: 14px;
+            padding: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .btn-save {
+            flex: 2;
+            border: none;
+            background: var(--primary);
+            border-radius: 14px;
+            padding: 12px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0,200,83,0.3);
+        }
+
+        .watchlist-count-badge {
+            background: var(--navy);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 10px;
+            margin-left: 6px;
+        }
+
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background-color: rgba(255, 255, 255, 0.98);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 25%;
+        }
+
+        .nav-item .nav-pill {
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-item i {
+            font-size: 17px;
+        }
+
+        .nav-item.active {
+            color: #0E5E3A;
+        }
+
+        .nav-item.active .nav-pill {
+            background-color: #C8F2DD;
+            color: #0E5E3A;
+        }
+
+        .nav-item span {
+            font-size: 11px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-frame">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span>AussieSaver</span>
+            <span>20:17 <i class="fa-solid fa-signal"></i> <i class="fa-solid fa-battery-full"></i></span>
+        </div>
+
+        <!-- Home View -->
+        <div id="view-home" class="screen-container tab-view active-view">
+            <!-- Curvy Mint Header -->
+            <div class="app-header">
+                <div class="header-top">
+                    <div class="logo-text">Aussie<span>Saver</span></div>
+                    <div style="background: rgba(255,255,255,0.4); padding: 5px 10px; border-radius: 10px; font-size:11px; font-weight:700; color:#0E5E3A;">
+                        <i class="fa-solid fa-location-dot"></i> Richmond Plaza
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Overlapping Savings Card Wrapper -->
+            <div class="savings-wrapper">
+                <div class="navy-card">
+                    <h3>Hi, Liam!</h3>
+                    <p id="savings-subtitle">Optimize your groceries & bills today</p>
+                </div>
+                <div class="floating-savings-card">
+                    <h1 id="savings-amt">$142.50 Saved</h1>
+                    <p>Your savings this month</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deals Section -->
+            <div style="padding: 0 20px; display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <div style="font-size:16px; font-weight:800; color:var(--text-dark);">
+                    Today's Live Offers
+                    <span class="watchlist-count-badge" id="watchlist-count-badge">10</span>
+                </div>
+                <div style="display:flex; gap:8px; align-items:center;">
+                    <div id="deals-live-badge" style="font-size:10px; font-weight:700; background:#E8F7F0; color:#0E5E3A; padding:3px 8px; border-radius:10px; border:1px solid rgba(0,200,83,0.2);">
+                        <i class="fa-solid fa-circle" style="font-size:7px; color:#00C853;"></i> LIVE
+                    </div>
+                    <button onclick="openWatchlist()" style="background:var(--navy); color:#fff; border:none; border-radius:10px; padding:5px 10px; font-size:10px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:4px;">
+                        <i class="fa-solid fa-sliders"></i> Customise
+                    </button>
+                </div>
+            </div>
+            <!-- Marquee carousel wrapper -->
+            <div class="marquee-outer" id="marquee-outer">
+                <div class="marquee-track" id="marquee-track">
+                    <!-- cards injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ WATCHLIST CUSTOMISE SHEET ══════════════════════════════════ -->
+        <div class="watchlist-overlay" id="watchlist-overlay" onclick="closeWatchlist(event)"></div>
+        <div class="watchlist-sheet" id="watchlist-sheet">
+            <div class="sheet-handle"></div>
+            <div class="sheet-header">
+                <div>
+                    <div class="sheet-title">My Daily Watchlist</div>
+                    <div class="sheet-subtitle">Pick categories to track on your home screen</div>
+                </div>
+                <button onclick="closeWatchlist()" style="background:var(--border); border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-size:14px; color:var(--text-muted);">✕</button>
+            </div>
+            <div class="sheet-body">
+                <div class="category-grid" id="category-grid">
+                    <!-- chips injected by JS -->
+                </div>
+            </div>
+            <div class="sheet-footer">
+                <button class="btn-reset" onclick="resetWatchlist()">Reset</button>
+                <button class="btn-save" onclick="saveWatchlist()"><i class="fa-solid fa-check"></i> Save Watchlist</button>
+            </div>
+        </div>
+
+        <!-- Search View -->
+        <div id="view-search" class="screen-container tab-view">
+            <div class="search-container-box">
+                <h2 style="font-size:22px; font-weight:800; color:var(--navy); margin-bottom:4px;">Product Search</h2>
+                <div style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Compare supermarket prices side-by-side</div>
+                
+                <div class="search-bar-input-box">
+                    <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted);"></i>
+                    <input type="text" id="search-input-field" placeholder="Search any product: laundry, milk, beer, vitamins..." oninput="handleSearch()">
+                </div>
+
+                <div id="search-results-list">
+                    <!-- Dynamic Search Results -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Basket View -->
+        <div id="view-basket" class="screen-container tab-view">
+            <div style="padding: 20px;">
+                <h2 style="font-size:22px; font-weight:800; color:var(--navy); margin-bottom:4px;">Basket Optimizer</h2>
+                <div style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Cheapest checkout builder</div>
+
+                <div style="background-color: var(--primary-light); border: 1px solid rgba(0,200,83,0.2); padding: 18px; border-radius: 20px; margin-bottom: 20px;">
+                    <h4 style="color:#0E5E3A; font-weight:800; margin-bottom:4px;">Split Shop Recommendation</h4>
+                    <p style="font-size:12px; color:#1C3F2F; margin-bottom:12px;">Split your basket to unlock maximum savings:</p>
+                    
+                    <div id="basket-items-list" style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+                        <!-- JS items -->
+                    </div>
+
+                    <div style="border-top:1px solid rgba(0, 200, 83, 0.2); padding-top:10px; margin-top:10px; display:flex; justify-content:space-between; font-weight:800; color:#0E5E3A; font-size:14px;">
+                        <span>Total optimized cost:</span>
+                        <span id="basket-optimized-total">$0.00</span>
+                    </div>
+                </div>
+
+                <h3 style="font-size:15px; font-weight:800; margin-bottom:10px; color:var(--navy);">Single Store Totals</h3>
+                <div id="basket-single-totals" style="display:flex; flex-direction:column; gap:8px;">
+                    <!-- Totals -->
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Assistant View -->
+        <div id="view-helper" class="screen-container tab-view" style="display:none; height:100%;">
+            <div class="chat-container-box">
+                <h2 style="font-size:20px; font-weight:800; color:var(--navy); margin-bottom:4px;">AI Savings Assistant</h2>
+                <div style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">Compare catalogs & optimize recipes dynamically</div>
+
+                <div class="chat-messages-scroll" id="chat-messages">
+                    <div class="chat-bubble assistant">
+                        G'day! I'm your AussieSaver assistant. Ask me to find the cheapest ingredients or compare local store specials!
+                    </div>
+                </div>
+
+                <div class="chat-input-bar">
+                    <input type="text" class="chat-input-field" id="chat-input" placeholder="Ask about any product, e.g. 'cheapest laundry liquid'" onkeydown="if(event.key === 'Enter') sendChatMessage()">
+                    <button class="chat-send-btn" onclick="sendChatMessage()">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active" id="nav-home" onclick="navigateTab(0)">
+                <div class="nav-pill">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" id="nav-search" onclick="navigateTab(1)">
+                <div class="nav-pill">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <span>Search</span>
+            </div>
+            <div class="nav-item" id="nav-basket" onclick="navigateTab(2)">
+                <div class="nav-pill">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+                <span>Basket</span>
+            </div>
+            <div class="nav-item" id="nav-helper" onclick="navigateTab(3)">
+                <div class="nav-pill">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+                <span>AI Helper</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentDomain = 'grocery';
+        let shoppingList = [];
+        
+        const database = {
+            // database.grocery is populated live from the backend on page load
+            grocery: [],
+
+        };
+
+        function setDomain(domain) {
+            currentDomain = domain;
+            renderDeals();
+            handleSearch();
+        }
+
+        // ── WATCHLIST CONFIG ──────────────────────────────────────────────────
+        // All available categories with display name + emoji icon
+        const ALL_CATEGORIES = [
+            { key: 'milk',         label: 'Milk',          icon: '🥛' },
+            { key: 'bread',        label: 'Bread',         icon: '🍞' },
+            { key: 'eggs',         label: 'Eggs',          icon: '🥚' },
+            { key: 'butter',       label: 'Butter',        icon: '🧈' },
+            { key: 'cheese',       label: 'Cheese',        icon: '🧀' },
+            { key: 'yoghurt',      label: 'Yoghurt',       icon: '🍦' },
+            { key: 'chocolate',    label: 'Chocolate',     icon: '🍫' },
+            { key: 'chips',        label: 'Chips',         icon: '🥔' },
+            { key: 'cereal',       label: 'Cereal',        icon: '🥣' },
+            { key: 'coffee',       label: 'Coffee',        icon: '☕' },
+            { key: 'juice',        label: 'Juice',         icon: '🍊' },
+            { key: 'water',        label: 'Water',         icon: '💧' },
+            { key: 'coke',         label: 'Soft Drink',    icon: '🥤' },
+            { key: 'beer',         label: 'Beer',          icon: '🍺' },
+            { key: 'laundry',      label: 'Laundry',       icon: '🧺' },
+            { key: 'dishwashing',  label: 'Dish Soap',     icon: '🍽️' },
+            { key: 'cleaning',     label: 'Cleaning',      icon: '🧹' },
+            { key: 'tissues',      label: 'Tissues',       icon: '🤧' },
+            { key: 'toilet',       label: 'Toilet Paper',  icon: '🧻' },
+            { key: 'shampoo',      label: 'Shampoo',       icon: '🧴' },
+            { key: 'deodorant',    label: 'Deodorant',     icon: '🌸' },
+            { key: 'toothpaste',   label: 'Toothpaste',    icon: '🪥' },
+            { key: 'sunscreen',    label: 'Sunscreen',     icon: '☀️' },
+            { key: 'vitamins',     label: 'Vitamins',      icon: '💊' },
+            { key: 'nappy',        label: 'Nappies',       icon: '👶' },
+            { key: 'formula',      label: 'Formula',       icon: '🍼' },
+            { key: 'pet',          label: 'Pet Food',      icon: '🐾' },
+            { key: 'pasta',        label: 'Pasta',         icon: '🍝' },
+            { key: 'rice',         label: 'Rice',          icon: '🍚' },
+            { key: 'sauce',        label: 'Sauce',         icon: '🥫' },
+            { key: 'oil',          label: 'Cooking Oil',   icon: '🫙' },
+            { key: 'frozen',       label: 'Frozen',        icon: '❄️' },
+            { key: 'ice cream',    label: 'Ice Cream',     icon: '🍨' },
+            { key: 'chicken',      label: 'Chicken',       icon: '🍗' },
+            { key: 'beef',         label: 'Beef',          icon: '🥩' },
+            { key: 'fish',         label: 'Fish',          icon: '🐟' },
+            { key: 'vegemite',     label: 'Spreads',       icon: '🫙' },
+        ];
+
+        const DEFAULT_WATCHLIST = ['milk', 'bread', 'chocolate', 'chips', 'coffee', 'laundry', 'eggs', 'cereal', 'yoghurt', 'juice'];
+        const LS_KEY = 'aussiesaver_watchlist';
+
+        function getWatchlist() {
+            try {
+                const saved = localStorage.getItem(LS_KEY);
+                if (saved) return JSON.parse(saved);
+            } catch(e) {}
+            return [...DEFAULT_WATCHLIST];
+        }
+
+        function openWatchlist() {
+            // Render chips
+            const grid = document.getElementById('category-grid');
+            const current = getWatchlist();
+            grid.innerHTML = '';
+            ALL_CATEGORIES.forEach(cat => {
+                const selected = current.includes(cat.key);
+                const chip = document.createElement('div');
+                chip.className = 'cat-chip' + (selected ? ' selected' : '');
+                chip.dataset.key = cat.key;
+                chip.innerHTML = `
+                    <div class="chip-check"><i class="fa-solid fa-check" style="font-size:7px;"></i></div>
+                    <span class="chip-icon">${cat.icon}</span>
+                    <span class="chip-label">${cat.label}</span>
+                `;
+                chip.onclick = () => chip.classList.toggle('selected');
+                grid.appendChild(chip);
+            });
+
+            document.getElementById('watchlist-overlay').classList.add('open');
+            setTimeout(() => document.getElementById('watchlist-sheet').classList.add('open'), 10);
+        }
+
+        function closeWatchlist(event) {
+            // If called from overlay click, only close if clicking outside the sheet
+            if (event && event.target !== document.getElementById('watchlist-overlay')) return;
+            document.getElementById('watchlist-sheet').classList.remove('open');
+            setTimeout(() => document.getElementById('watchlist-overlay').classList.remove('open'), 340);
+        }
+
+        function saveWatchlist() {
+            const selected = [...document.querySelectorAll('.cat-chip.selected')].map(c => c.dataset.key);
+            if (selected.length === 0) {
+                alert('Please select at least one category.');
+                return;
+            }
+            localStorage.setItem(LS_KEY, JSON.stringify(selected));
+            document.getElementById('watchlist-sheet').classList.remove('open');
+            setTimeout(() => {
+                document.getElementById('watchlist-overlay').classList.remove('open');
+                database.grocery = [];
+                loadLiveDeals();
+            }, 340);
+        }
+
+        function resetWatchlist() {
+            localStorage.removeItem(LS_KEY);
+            document.querySelectorAll('.cat-chip').forEach(c => {
+                c.classList.toggle('selected', DEFAULT_WATCHLIST.includes(c.dataset.key));
+            });
+        }
+
+        async function loadLiveDeals() {
+            const watchlist = getWatchlist();
+            document.getElementById('watchlist-count-badge').textContent = watchlist.length;
+
+            // Show spinner in the marquee outer area
+            const track = document.getElementById('marquee-track');
+            if (track) track.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:30px 0;font-size:13px;width:350px;"><i class="fa-solid fa-spinner fa-spin"></i> Loading live offers...</div>';
+
+            try {
+                const results = await Promise.all(
+                    watchlist.map(cat =>
+                        fetch('/api/search?q=' + encodeURIComponent(cat))
+                            .then(r => r.json())
+                            .then(data => data && data.length > 0 ? data[0] : null)
+                            .catch(() => null)
+                    )
+                );
+
+                const deals = results.filter(Boolean);
+                deals.forEach(p => {
+                    if (!database.grocery.some(x => x.id === p.id)) {
+                        database.grocery.push(p);
+                    }
+                });
+
+                let totalSaving = 0;
+                deals.forEach(p => {
+                    const prices = p.stores.map(s => s.price);
+                    totalSaving += Math.max(...prices) - Math.min(...prices);
+                });
+                document.getElementById('savings-amt').innerText = '$' + totalSaving.toFixed(2) + ' Potential';
+                document.getElementById('savings-subtitle').innerText = 'Savings across your ' + watchlist.length + ' tracked categories';
+
+                renderDeals();
+            } catch (err) {
+                if (track) track.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:30px 0;font-size:13px;width:350px;">Could not load live offers. Make sure server.py is running.</div>';
+            }
+        }
+
+        // Category emoji lookup for marquee cards
+        const CAT_EMOJI = {};
+        ALL_CATEGORIES.forEach(c => { CAT_EMOJI[c.key] = c.icon; });
+
+        function emojiForDeal(deal) {
+            const n = deal.name.toLowerCase();
+            for (const cat of ALL_CATEGORIES) {
+                if (n.includes(cat.key) || n.includes(cat.label.toLowerCase())) return cat.icon;
+            }
+            return '🛒';
+        }
+
+        function storeColor(logoClass) {
+            if (logoClass === 'bg-woolies') return '#377B2B';
+            if (logoClass === 'bg-coles')   return '#E01A22';
+            if (logoClass === 'bg-aldi')    return '#002C6C';
+            return '#888';
+        }
+
+        function buildMarqueeCard(deal) {
+            const emoji = emojiForDeal(deal);
+            // Truncate name to ~22 chars for card
+            const shortName = deal.name.length > 22 ? deal.name.slice(0, 21) + '…' : deal.name;
+            const shortBadge = deal.badge.length > 18 ? deal.badge.slice(0, 17) + '…' : deal.badge;
+
+            let rowsHtml = '';
+            deal.stores.forEach(s => {
+                const origHtml = s.original
+                    ? `<span class="mcard-orig">$${s.original.toFixed(2)}</span>`
+                    : '';
+                const bestPill = s.isBest ? `<span class="mcard-best-pill">BEST</span>` : '';
+                rowsHtml += `
+                    <div class="mcard-row ${s.isBest ? 'best' : ''}">
+                        <div class="mcard-store">
+                            <span class="mcard-dot" style="background:${storeColor(s.logoClass)};"></span>
+                            ${s.logo === 'W' ? 'Woolies' : s.logo === 'C' ? 'Coles' : 'ALDI'}
+                        </div>
+                        <div class="mcard-price-wrap">
+                            <div style="display:flex;align-items:center;gap:3px;">
+                                ${origHtml}
+                                <span class="mcard-price">$${s.price.toFixed(2)}</span>
+                            </div>
+                            ${bestPill}
+                        </div>
+                    </div>`;
+            });
+
+            return `
+                <div class="marquee-card">
+                    <div class="mcard-hero">
+                        <span class="mcard-emoji">${emoji}</span>
+                        <span class="mcard-name">${shortName}</span>
+                        <span class="mcard-brand">${deal.brand}</span>
+                        <span class="mcard-badge">${shortBadge}</span>
+                    </div>
+                    <div class="mcard-table">${rowsHtml}</div>
+                </div>`;
+        }
+
+        function renderDeals() {
+            const track = document.getElementById('marquee-track');
+            if (!track) return;
+
+            const deals = database.grocery;
+            if (deals.length === 0) return;
+
+            // Build cards HTML (no duplicate since we want it static)
+            const cardsHtml = deals.map(d => buildMarqueeCard(d)).join('');
+            track.innerHTML = cardsHtml;
+        }
+
+        function navigateTab(idx) {
+            // Update nav bar active class
+            const navIds = ['nav-home', 'nav-search', 'nav-basket', 'nav-helper'];
+            const viewIds = ['view-home', 'view-search', 'view-basket', 'view-helper'];
+
+            navIds.forEach((id, i) => {
+                const navItem = document.getElementById(id);
+                const viewItem = document.getElementById(viewIds[i]);
+                if (i === idx) {
+                    navItem.classList.add('active');
+                    viewItem.classList.add('active-view');
+                } else {
+                    navItem.classList.remove('active');
+                    viewItem.classList.remove('active-view');
+                }
+            });
+        }
+
+        // Live Search Handling
+        let searchTimeout = null;
+        function handleSearch() {
+            const query = document.getElementById('search-input-field').value.toLowerCase().trim();
+            const container = document.getElementById('search-results-list');
+
+            if (query.length < 2) {
+                container.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:30px; font-size:13px;">Type at least 2 characters to search.</div>`;
+                return;
+            }
+
+            container.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:30px; font-size:13px;"><i class="fa-solid fa-spinner fa-spin"></i> Scraper connecting to Woolworths & Coles catalog...</div>`;
+
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                fetch('/api/search?q=' + encodeURIComponent(query))
+                    .then(res => res.json())
+                    .then(data => {
+                        container.innerHTML = '';
+                        if (data.length === 0) {
+                            container.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:30px; font-size:13px;">No items found.</div>`;
+                            return;
+                        }
+                        
+                        // Dynamically update local temporary database so we can add them to basket
+                        data.forEach(scrapedProduct => {
+                            // Check if already in database.grocery
+                            if (!database.grocery.some(p => p.id === scrapedProduct.id)) {
+                                database.grocery.push(scrapedProduct);
+                            }
+                            renderProductCard(scrapedProduct, container);
+                        });
+                    })
+                    .catch(err => {
+                        container.innerHTML = `<div style="text-align:center; color:red; padding:30px; font-size:13px;">Scraper error. Ensure backend is running.</div>`;
+                    });
+            }, 400); // Debounce search requests
+        }
+
+        function renderProductCard(deal, container) {
+            const card = document.createElement('div');
+            card.className = 'premium-deal-card';
+
+            let storeRowsHtml = '';
+            deal.stores.forEach(store => {
+                storeRowsHtml += `
+                    <div class="store-row ${store.isBest ? 'best-deal' : ''}">
+                        <div class="store-identity">
+                            <span class="store-badge ${store.logoClass}">${store.logo}</span>
+                            <span>${store.name}</span>
+                        </div>
+                        <div class="store-prices">
+                            ${store.original ? `<span class="original-price">$${store.original.toFixed(2)}</span>` : ''}
+                            <span class="current-price">$${store.price.toFixed(2)}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="deal-badge">${deal.badge}</div>
+                <div class="product-meta">
+                    <div class="product-name">${deal.name}</div>
+                    <div class="product-brand">${deal.brand}</div>
+                </div>
+                <div class="store-comparison-list">
+                    ${storeRowsHtml}
+                </div>
+                <div class="add-to-basket-action">
+                    <span style="font-size:11px; color:var(--text-muted);">Add to basket optimizer</span>
+                    <button class="btn-add-action" onclick="addToBasket('${deal.id}')">+ Add</button>
+                </div>
+            `;
+            container.appendChild(card);
+        }
+
+        // Basket Optimizer logic
+        function addToBasket(id) {
+            if (!shoppingList.includes(id)) {
+                shoppingList.push(id);
+                updateBasketUI();
+                alert("Added to your savings basket!");
+            } else {
+                alert("Item already in basket!");
+            }
+        }
+
+        function updateBasketUI() {
+            const listContainer = document.getElementById('basket-items-list');
+            const optimizedTotalSpan = document.getElementById('basket-optimized-total');
+            const singleTotalsContainer = document.getElementById('basket-single-totals');
+
+            listContainer.innerHTML = '';
+            singleTotalsContainer.innerHTML = '';
+
+            if (shoppingList.length === 0) {
+                listContainer.innerHTML = '<div style="color:var(--text-muted); text-align:center; font-size:12px;">Your basket is empty. Add items from Deals or Search!</div>';
+                optimizedTotalSpan.innerText = '$0.00';
+                return;
+            }
+
+            let splitTotal = 0;
+            let storeSums = {};
+
+            shoppingList.forEach(itemId => {
+                // Find product
+                let product = null;
+                for (const cat in database) {
+                    const match = database[cat].find(p => p.id === itemId);
+                    if (match) {
+                        product = match;
+                        break;
+                    }
+                }
+
+                if (product) {
+                    // Find cheapest store for item
+                    let cheapest = product.stores.reduce((min, current) => current.price < min.price ? current : min, product.stores[0]);
+                    splitTotal += cheapest.price;
+
+                    // Add to lists
+                    const row = document.createElement('div');
+                    row.style.display = 'flex';
+                    row.style.justify = 'space-between';
+                    row.innerHTML = `<span>${product.name}</span><span style="font-weight:700; color:#0E5E3A;">${cheapest.name.split(' ')[0]} - $${cheapest.price.toFixed(2)}</span>`;
+                    listContainer.appendChild(row);
+
+                    // Sum single store totals
+                    product.stores.forEach(store => {
+                        const storeKey = store.name.split(' ')[0]; // Woolworths, Coles, ALDI
+                        if (!storeSums[storeKey]) storeSums[storeKey] = 0;
+                        storeSums[storeKey] += store.price;
+                    });
+                }
+            });
+
+            optimizedTotalSpan.innerText = '$' + splitTotal.toFixed(2);
+
+            // Populate single store totals
+            for (const store in storeSums) {
+                const totalRow = document.createElement('div');
+                totalRow.style.display = 'flex';
+                totalRow.style.justify = 'space-between';
+                totalRow.style.padding = '8px 12px';
+                totalRow.style.borderRadius = '12px';
+                totalRow.style.backgroundColor = '#F8FAFC';
+                totalRow.style.fontSize = '13px';
+                totalRow.innerHTML = `<span style="font-weight:700; color:var(--text-dark);">${store} Total</span><span style="font-weight:800;">$${storeSums[store].toFixed(2)}</span>`;
+                singleTotalsContainer.appendChild(totalRow);
+            }
+        }
+
+        // AI Helper chat logic
+        function sendChatMessage() {
+            const inputField = document.getElementById('chat-input');
+            const query = inputField.value.trim();
+            if (!query) return;
+
+            const chatMessages = document.getElementById('chat-messages');
+
+            // User message bubble
+            const userBubble = document.createElement('div');
+            userBubble.className = 'chat-bubble user';
+            userBubble.innerText = query;
+            chatMessages.appendChild(userBubble);
+            inputField.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Thinking indicator
+            const thinkingBubble = document.createElement('div');
+            thinkingBubble.className = 'chat-bubble assistant';
+            thinkingBubble.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Scanning catalogs...';
+            chatMessages.appendChild(thinkingBubble);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Extract product keyword from conversational query
+            const keyword = query.replace(/cheapest|best|where|can i get|find|price of|how much is|compare|buy|at|in|for|the|a|an|is|are|what/gi, ' ').trim();
+
+            fetch('/api/search?q=' + encodeURIComponent(keyword || query))
+                .then(res => res.json())
+                .then(data => {
+                    chatMessages.removeChild(thinkingBubble);
+
+                    if (!data || data.length === 0) {
+                        const bubble = document.createElement('div');
+                        bubble.className = 'chat-bubble assistant';
+                        bubble.innerText = `Sorry, I couldn't find "${keyword}" in the catalog. Try searching for milk, laundry, chips, coffee, beer, vitamins, etc.`;
+                        chatMessages.appendChild(bubble);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                        return;
+                    }
+
+                    // Build a rich response from the top 3 results
+                    const top = data.slice(0, 3);
+                    const assistantBubble = document.createElement('div');
+                    assistantBubble.className = 'chat-bubble assistant';
+
+                    let html = `<strong>Found ${data.length} products for "${keyword || query}".</strong><br><br>`;
+                    top.forEach(p => {
+                        const bestStore = p.stores.reduce((a, b) => a.price < b.price ? a : b);
+                        const worstStore = p.stores.reduce((a, b) => a.price > b.price ? a : b);
+                        const saving = (worstStore.price - bestStore.price).toFixed(2);
+                        html += `🛒 <strong>${p.name}</strong><br>`;
+                        html += `&nbsp;&nbsp;✅ Best: <strong>${bestStore.name}</strong> @ <strong>$${bestStore.price.toFixed(2)}</strong>`;
+                        if (parseFloat(saving) > 0) {
+                            html += ` (save $${saving} vs ${worstStore.name})`;
+                        }
+                        html += `<br><br>`;
+                    });
+
+                    if (data.length > 3) {
+                        html += `<em>...and ${data.length - 3} more results. Tap Search to see all.</em>`;
+                    }
+
+                    html += `<br><small style="color:#718096;">💡 Tip: Add items to your Basket to see the optimized split-shop total.</small>`;
+
+                    assistantBubble.innerHTML = html;
+                    chatMessages.appendChild(assistantBubble);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                    // Also pre-populate search results dynamically
+                    data.forEach(scrapedProduct => {
+                        if (!database.grocery.some(p => p.id === scrapedProduct.id)) {
+                            database.grocery.push(scrapedProduct);
+                        }
+                    });
+                })
+                .catch(() => {
+                    chatMessages.removeChild(thinkingBubble);
+                    const bubble = document.createElement('div');
+                    bubble.className = 'chat-bubble assistant';
+                    bubble.innerText = 'Backend server is not running. Please start server.py first, then try again.';
+                    chatMessages.appendChild(bubble);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                });
+        }
+
+        // Init — load live deals from backend on startup
+        loadLiveDeals();
+        handleSearch();
+
+        // Drag-to-scroll on marquee (desktop)
+        (function() {
+            const outer = document.getElementById('marquee-outer');
+            if (!outer) return;
+            let isDragging = false, startX = 0, scrollLeft = 0;
+
+            outer.addEventListener('mousedown', e => {
+                isDragging = true;
+                outer.style.cursor = 'grabbing';
+                startX = e.pageX - outer.offsetLeft;
+                scrollLeft = outer.scrollLeft;
+            });
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                outer.style.cursor = 'grab';
+            });
+            outer.addEventListener('mousemove', e => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - outer.offsetLeft;
+                outer.scrollLeft = scrollLeft - (x - startX);
+            });
+        })();
+    </script>
+</body>
+</html>
