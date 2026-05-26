@@ -4,6 +4,11 @@ import urllib.parse
 import json
 import os
 import random
+import sys
+import time
+import datetime
+import threading
+import subprocess
 
 PORT = 8000
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
@@ -691,6 +696,183 @@ def make_result(template, query, idx, category=None):
     }
 
 
+# ──────────────────────────────────────────────────────────────────────────────
+# FIREBASE FIRESTORE INTEGRATION & CATALOG CACHE
+# ──────────────────────────────────────────────────────────────────────────────
+db = None
+FIRESTORE_CATALOG = {}
+FIRESTORE_LAST_LOADED = 0
+
+try:
+    import firebase_admin
+    from firebase_admin import credentials, firestore
+    cred_path = os.path.join(DIRECTORY, 'firebase-credentials.json')
+    if os.path.exists(cred_path):
+        cred = credentials.Certificate(cred_path)
+        firebase_admin.initialize_app(cred, {
+            'projectId': 'pantrybloom'
+        }, name='server_app')
+        db = firestore.client(app=firebase_admin.get_app('server_app'))
+        print("Server successfully initialized Firebase Admin SDK (Project: pantrybloom).")
+    else:
+        print("Server warning: firebase-credentials.json not found. Firestore features disabled.")
+except Exception as e:
+    print("Server failed to initialize Firebase Admin SDK:", e)
+
+def load_firestore_catalog():
+    global FIRESTORE_CATALOG, FIRESTORE_LAST_LOADED
+    if db is None:
+        # Fallback to local scraped JSON if it exists
+        fallback_path = os.path.join(DIRECTORY, 'scraped_products_fallback.json')
+        if os.path.exists(fallback_path):
+            try:
+                with open(fallback_path, 'r', encoding='utf-8') as f:
+                    fallback_data = json.load(f)
+                
+                new_catalog = {}
+                for pid, pdata in fallback_data.items():
+                    cat = pdata.get('category', 'general')
+                    if cat not in new_catalog:
+                        new_catalog[cat] = []
+                    
+                    new_catalog[cat].append({
+                        "id": pid,
+                        "name": pdata.get('name'),
+                        "brand": pdata.get('brand'),
+                        "size": pdata.get('size'),
+                        "image_url": pdata.get('image_url'),
+                        "barcode": pdata.get('barcode', ''),
+                        "prices": pdata.get('prices', {})
+                    })
+                FIRESTORE_CATALOG = new_catalog
+                FIRESTORE_LAST_LOADED = time.time()
+                print(f"Loaded {sum(len(v) for v in FIRESTORE_CATALOG.values())} products from local scraped fallback JSON.")
+            except Exception as e:
+                print("Failed loading local scraped fallback JSON:", e)
+        return
+
+    try:
+        print("Loading product catalog from Firebase Firestore (scraped_products)...")
+        new_catalog = {}
+        products_ref = db.collection('scraped_products')
+        docs = products_ref.stream()
+        
+        count = 0
+        for doc in docs:
+            pdata = doc.to_dict()
+            pid = doc.id
+            cat = pdata.get('category', 'general')
+            if cat not in new_catalog:
+                new_catalog[cat] = []
+                
+            # Get the prices subcollection for this product
+            prices = {}
+            prices_ref = doc.reference.collection('prices').stream()
+            for price_doc in prices_ref:
+                prices[price_doc.id] = price_doc.to_dict()
+                
+            new_catalog[cat].append({
+                "id": pid,
+                "name": pdata.get('name'),
+                "brand": pdata.get('brand'),
+                "size": pdata.get('size'),
+                "image_url": pdata.get('image_url'),
+                "barcode": pdata.get('barcode', ''),
+                "prices": prices
+            })
+            count += 1
+            
+        FIRESTORE_CATALOG = new_catalog
+        FIRESTORE_LAST_LOADED = time.time()
+        print(f"Successfully loaded {count} products from Firestore collection 'scraped_products'.")
+    except Exception as e:
+        print("Error loading catalog from Firestore:", e)
+
+def make_firestore_result(product, query, idx, category=None):
+    name = product["name"]
+    brand = product["brand"]
+    pid = product["id"]
+    prices = product["prices"]
+    
+    valid_prices = [pdata["price"] for pdata in prices.values() if pdata.get("price") is not None]
+    min_price = min(valid_prices) if valid_prices else 0.0
+    
+    badge = ""
+    for store_name, pdata in prices.items():
+        if pdata.get("is_promo") and pdata.get("promo_desc"):
+            badge = f"{store_name} Special"
+            desc = pdata.get("promo_desc").lower()
+            if "half" in desc or "50%" in desc or (pdata.get("original_price") and round(pdata["price"]/pdata["original_price"], 2) == 0.5):
+                badge = f"Half Price @ {store_name}"
+            break
+            
+    if not badge:
+        best_stores = [s for s, pd in prices.items() if pd.get("price") == min_price]
+        if best_stores:
+            badge = f"{best_stores[0]} Best Deal"
+        else:
+            badge = "Compare Price"
+            
+    stores = []
+    for store_name, logo, logo_class in [("Woolworths", "W", "bg-woolies"), ("Coles", "C", "bg-coles"), ("ALDI", "A", "bg-aldi")]:
+        pdata = prices.get(store_name)
+        if pdata:
+            price = pdata.get("price")
+            orig = pdata.get("original_price")
+            if orig == price:
+                orig = None
+            stores.append({
+                "name": store_name,
+                "price": price,
+                "original": orig,
+                "isBest": price == min_price and price is not None,
+                "logo": logo,
+                "logoClass": logo_class
+            })
+        else:
+            stores.append({
+                "name": store_name,
+                "price": None,
+                "original": None,
+                "isBest": False,
+                "logo": logo,
+                "logoClass": logo_class
+            })
+            
+    return {
+        "id": pid,
+        "name": name,
+        "brand": brand,
+        "badge": badge,
+        "category": category if category else "general",
+        "stores": stores
+    }
+
+def run_daily_scheduler():
+    while True:
+        try:
+            now = datetime.datetime.now()
+            target = now.replace(hour=3, minute=0, second=0, microsecond=0)
+            if target <= now:
+                target += datetime.timedelta(days=1)
+                
+            sleep_seconds = (target - now).total_seconds()
+            print(f"Daily Scraper Scheduler: Next scheduled crawl at {target.strftime('%Y-%m-%d %H:%M:%S')} (sleeping for {round(sleep_seconds/3600, 2)} hours)")
+            
+            while sleep_seconds > 0:
+                time.sleep(min(60, sleep_seconds))
+                sleep_seconds -= 60
+                
+            print("Daily Scraper Scheduler: Starting scheduled crawl...")
+            subprocess.run([sys.executable, os.path.join(DIRECTORY, "scraper.py")])
+            print("Daily Scraper Scheduler: Crawl completed. Reloading Firestore catalog...")
+            load_firestore_catalog()
+            
+        except Exception as e:
+            print("Error in daily scraper scheduler:", e)
+            time.sleep(60)
+
+
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
@@ -704,8 +886,20 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_api_search(parsed_url.query)
         elif parsed_url.path == '/api/categories':
             self.handle_categories()
+        elif parsed_url.path == '/api/scrape-now':
+            self.handle_scrape_now()
         else:
             super().do_GET()
+
+    def handle_scrape_now(self):
+        def run_async():
+            print("Manual scrape triggered...")
+            subprocess.run([sys.executable, os.path.join(DIRECTORY, "scraper.py")])
+            print("Manual scrape finished. Reloading Firestore catalog...")
+            load_firestore_catalog()
+            
+        threading.Thread(target=run_async, daemon=True).start()
+        self.send_json({"status": "Scraper started in the background. Check logs."})
 
     def send_json(self, data, status=200):
         body = json.dumps(data).encode('utf-8')
@@ -728,22 +922,48 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_json({"error": "Query too short"}, 400)
                 return
 
-            # Try to resolve to a catalog category
-            cat_key = resolve_catalog_key(query)
+            results = []
+            
+            # 1. Search in Firestore-loaded catalog
+            if FIRESTORE_CATALOG:
+                query_lower = query.lower()
+                matched_products = []
+                # Substring matching on product name or brand
+                for cat_key, products in FIRESTORE_CATALOG.items():
+                    for product in products:
+                        name_lower = product["name"].lower()
+                        brand_lower = product["brand"].lower()
+                        if query_lower in name_lower or query_lower in brand_lower:
+                            matched_products.append((product, cat_key))
+                            
+                # Format matches
+                for idx, (prod, cat_key) in enumerate(matched_products):
+                    results.append(make_firestore_result(prod, query, idx, cat_key))
+                    
+                # If query matches category, load the rest of the products in that category
+                cat_key = resolve_catalog_key(query)
+                if cat_key and cat_key in FIRESTORE_CATALOG:
+                    matched_ids = {r["id"] for r in results}
+                    for idx, prod in enumerate(FIRESTORE_CATALOG[cat_key]):
+                        if prod["id"] not in matched_ids:
+                            results.append(make_firestore_result(prod, query, len(results), cat_key))
 
-            if cat_key and cat_key in CATALOG:
-                templates = CATALOG[cat_key]
-            else:
-                # Generative fallback for truly unknown products
-                cap_q = query.capitalize()
-                templates = [
-                    {"name": f"{cap_q} Premium Selection 500g",  "brand": "Premium Select",    "size": "500g", "base_price": 15.00},
-                    {"name": f"Woolworths {cap_q} Value Pack",   "brand": "Woolworths",        "size": "1kg",  "base_price": 6.50},
-                    {"name": f"ALDI {cap_q} House Brand",        "brand": "ALDI",              "size": "500g", "base_price": 4.99},
-                    {"name": f"Coles {cap_q} Everyday",          "brand": "Coles",             "size": "500g", "base_price": 5.50},
-                ]
+            # 2. Fall back to local template CATALOG if no Firestore results found
+            if not results:
+                cat_key = resolve_catalog_key(query)
+                if cat_key and cat_key in CATALOG:
+                    templates = CATALOG[cat_key]
+                else:
+                    # Generative fallback for truly unknown products
+                    cap_q = query.capitalize()
+                    templates = [
+                        {"name": f"{cap_q} Premium Selection 500g",  "brand": "Premium Select",    "size": "500g", "base_price": 15.00},
+                        {"name": f"Woolworths {cap_q} Value Pack",   "brand": "Woolworths",        "size": "1kg",  "base_price": 6.50},
+                        {"name": f"ALDI {cap_q} House Brand",        "brand": "ALDI",              "size": "500g", "base_price": 4.99},
+                        {"name": f"Coles {cap_q} Everyday",          "brand": "Coles",             "size": "500g", "base_price": 5.50},
+                    ]
+                results = [make_result(t, query, i, cat_key if cat_key else query) for i, t in enumerate(templates)]
 
-            results = [make_result(t, query, i, cat_key if cat_key else query) for i, t in enumerate(templates)]
             self.send_json(results)
         except Exception as e:
             import traceback
@@ -752,6 +972,12 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    # Load Firestore catalog (or local scraped fallback)
+    load_firestore_catalog()
+    
+    # Start the 3:00 AM daily scheduler background thread
+    threading.Thread(target=run_daily_scheduler, daemon=True).start()
+
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
         print(f"AussieSaver Backend running --> http://localhost:{PORT}")

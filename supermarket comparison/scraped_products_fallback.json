@@ -1,0 +1,512 @@
+{
+    "aldi_mega-roulette-45g-000000000000173130": {
+        "barcode": "",
+        "name": "Mega Roulette 45g",
+        "brand": "HARIBO",
+        "size": "45 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f565efbc-67cf-4f99-bbcc-20145ad72315/Mega%20Roulette%2045g",
+        "prices": {
+            "ALDI": {
+                "price": 0.99,
+                "original_price": 0.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_so-natural-organic-organic-extra-virgin-olive-oil-500ml-000000000000199822": {
+        "barcode": "",
+        "name": "Organic Extra Virgin Olive Oil 500ml",
+        "brand": "OH SO NATURAL ORGANIC",
+        "size": "500 ml",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/ce18a1c2-0a82-4534-88d3-a83ebab3db92/Organic%20Extra%20Virgin%20Olive%20Oil%20500ml",
+        "prices": {
+            "ALDI": {
+                "price": 8.99,
+                "original_price": 8.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_vita-sunflower-oil-1l-000000000000200347": {
+        "barcode": "",
+        "name": "Sunflower Oil 1L",
+        "brand": "PURE VITA",
+        "size": "1,000 ml",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f315fe90-7075-4f29-b0cb-5abad7510ad9/Sunflower%20Oil%201L",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_appetit-chocolate-chip-brioche-milk-rolls-8-pack-280g-000000000000200998": {
+        "barcode": "",
+        "name": "Chocolate Chip Brioche Milk Rolls 8 Pack 280g",
+        "brand": "BON APPETIT",
+        "size": "280 g",
+        "category": "milk",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f2efa456-39e2-4bc9-93c5-5ff8030239f2/Chocolate%20Chip%20Brioche%20Milk%20Rolls%208%20Pack%20280g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_originals-spanish-stuffed-green-olives-450g-000000000000210837": {
+        "barcode": "",
+        "name": "Spanish Stuffed Green Olives 450g",
+        "brand": "DELI ORIGINALS",
+        "size": "0.45 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/8675cc3e-0c24-4d63-9355-0f43b0d10c02/Spanish%20Stuffed%20Green%20Olives%20450g",
+        "prices": {
+            "ALDI": {
+                "price": 2.25,
+                "original_price": 2.25,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_baked-beans-in-tomato-sauce-420g-000000000000261610": {
+        "barcode": "",
+        "name": "Baked Beans in Tomato Sauce 420g",
+        "brand": "CORALE",
+        "size": "420 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/052753ed-d194-4344-be26-b99946f66710/Baked%20Beans%20in%20Tomato%20Sauce%20420g",
+        "prices": {
+            "ALDI": {
+                "price": 1.09,
+                "original_price": 1.09,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_pure-maple-syrup-250ml-000000000000261631": {
+        "barcode": "",
+        "name": "Pure Maple Syrup 250ml",
+        "brand": "BROOKDALE",
+        "size": "250 ml",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/92ab7023-6cb8-43c0-a258-a4fb5645c959/Pure%20Maple%20Syrup%20250ml",
+        "prices": {
+            "ALDI": {
+                "price": 5.49,
+                "original_price": 5.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_appetit-pains-au-chocolat-6-pack-270g-000000000000262056": {
+        "barcode": "",
+        "name": "Pains Au Chocolat 6 Pack 270g",
+        "brand": "BON APPETIT",
+        "size": "270 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/2f8b1aaa-0a6c-46a1-86f2-c48eb5ff9eec/Pains%20Au%20Chocolat%206%20Pack%20270g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_grain-jasmine-rice-1kg-000000000000262101": {
+        "barcode": "",
+        "name": "Jasmine Rice 1kg",
+        "brand": "IMPERIAL GRAIN",
+        "size": "1,000 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f8c80679-b4ba-46fe-af9f-058b76d5cf08/Jasmine%20Rice%201kg",
+        "prices": {
+            "ALDI": {
+                "price": 3.19,
+                "original_price": 3.19,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_grain-basmati-rice-1kg-000000000000262325": {
+        "barcode": "",
+        "name": "Basmati Rice 1kg",
+        "brand": "IMPERIAL GRAIN",
+        "size": "1,000 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/a560b507-81e7-4363-8287-50db45da54a0/Basmati%20Rice%201kg",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_grain-long-grain-rice-2kg-000000000000262809": {
+        "barcode": "",
+        "name": "Long Grain Rice 2kg",
+        "brand": "IMPERIAL GRAIN",
+        "size": "2,000 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/f741576a-2c44-4fa6-98ce-06a083c58a94/Long%20Grain%20Rice%202kg",
+        "prices": {
+            "ALDI": {
+                "price": 3.59,
+                "original_price": 3.59,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_vine-pitted-prunes-500-g-000000000000266263": {
+        "barcode": "",
+        "name": "Pitted Prunes 500 g",
+        "brand": "SWEET VINE",
+        "size": "0.5 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/85581f2f-c0b5-422b-93d2-8a73c8b5415c/Pitted%20Prunes%20500%20g",
+        "prices": {
+            "ALDI": {
+                "price": 5.69,
+                "original_price": 5.69,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_slider-bags-25-pack-000000000000268369": {
+        "barcode": "",
+        "name": "Slider Bags 25 Pack",
+        "brand": "GOLIATH",
+        "size": "25 each",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/19afad1c-2de3-4f2d-b10f-25c8b11f493a/Slider%20Bags%2025%20Pack",
+        "prices": {
+            "ALDI": {
+                "price": 2.49,
+                "original_price": 2.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_basil-pesto-190g-000000000000274244": {
+        "barcode": "",
+        "name": "Basil Pesto 190g",
+        "brand": "REMANO",
+        "size": "190 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/811290eb-12a1-4bca-afb8-ee096da0bbe7/Basil%20Pesto%20190g",
+        "prices": {
+            "ALDI": {
+                "price": 1.89,
+                "original_price": 1.89,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_sundried-tomato-pesto-190g-000000000000274249": {
+        "barcode": "",
+        "name": "Sundried Tomato Pesto 190g",
+        "brand": "REMANO",
+        "size": "190 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/dd61ce2d-fb6f-416a-abb8-cc5622d93393/Sundried%20Tomato%20Pesto%20190g",
+        "prices": {
+            "ALDI": {
+                "price": 1.89,
+                "original_price": 1.89,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_authentic-mayonnaise-squeeze-475g-000000000000275699": {
+        "barcode": "",
+        "name": "Authentic Mayonnaise Squeeze 475g",
+        "brand": "COLWAY",
+        "size": "475 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/e7ee855b-33c6-4dbb-b0af-9a6b8d21445c/Authentic%20Mayonnaise%20Squeeze%20475g",
+        "prices": {
+            "ALDI": {
+                "price": 3.99,
+                "original_price": 3.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_italian-diced-tomatoes-400g-000000000000278716": {
+        "barcode": "",
+        "name": "Italian Diced Tomatoes 400g",
+        "brand": "REMANO",
+        "size": "0.4 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/ec29a462-82b7-41a1-a64b-5f2371583202/Italian%20Diced%20Tomatoes%20400g",
+        "prices": {
+            "ALDI": {
+                "price": 0.95,
+                "original_price": 0.95,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_royale-crumbed-calamari-rings-400g-000000000000278981": {
+        "barcode": "",
+        "name": "Crumbed Calamari Rings 400g",
+        "brand": "OCEAN ROYALE",
+        "size": "0.4 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/7394db98-937c-4bfb-a7ad-b4b61034bc03/Crumbed%20Calamari%20Rings%20400g",
+        "prices": {
+            "ALDI": {
+                "price": 4.39,
+                "original_price": 4.39,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_royale-salt-pepper-squid-360g-000000000000278985": {
+        "barcode": "",
+        "name": "Salt &amp; Pepper Squid 360g",
+        "brand": "OCEAN ROYALE",
+        "size": "0.36 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/1ab83c58-8430-457a-8486-8a0fd53393b2/Salt%20%20Pepper%20Squid%20360g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_royale-basa-fillets-1kg-000000000000279936": {
+        "barcode": "",
+        "name": "Basa Fillets 1kg",
+        "brand": "OCEAN ROYALE",
+        "size": "1 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/3b9d6613-2b96-48bc-8ea5-658f7d21042b/Basa%20Fillets%201kg",
+        "prices": {
+            "ALDI": {
+                "price": 6.99,
+                "original_price": 6.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_royale-barramundi-fillets-1kg-000000000000279961": {
+        "barcode": "",
+        "name": "Barramundi Fillets 1kg",
+        "brand": "OCEAN ROYALE",
+        "size": "1 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/5ab42d82-8d94-4dfe-bd8a-3188841c7d32/Barramundi%20Fillets%201kg",
+        "prices": {
+            "ALDI": {
+                "price": 19.99,
+                "original_price": 19.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_valley-peach-slices-in-syrup-825g-000000000000280732": {
+        "barcode": "",
+        "name": "Peach Slices In Syrup 825g",
+        "brand": "SWEET VALLEY",
+        "size": "0.825 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/14b8b982-21ea-496e-9fc1-0cfd8f074ce4/Peach%20Slices%20In%20Syrup%20825g",
+        "prices": {
+            "ALDI": {
+                "price": 2.39,
+                "original_price": 2.39,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_selection-triple-cream-brie-cheese-200g-000000000000281811": {
+        "barcode": "",
+        "name": "Triple Cream Brie Cheese 200g",
+        "brand": "EMPORIUM SELECTION",
+        "size": "0.2 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/062a3faa-4a09-48b2-bad0-521224c694eb/Triple%20Cream%20Brie%20Cheese%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_selection-double-cream-camembert-200g-000000000000281818": {
+        "barcode": "",
+        "name": "Double Cream Camembert 200g",
+        "brand": "EMPORIUM SELECTION",
+        "size": "0.2 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/47933bb7-6e5e-4adf-9ac5-9b2b4aae8513/Double%20Cream%20Camembert%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_selection-smooth-blue-vein-cheese-200g-000000000000281867": {
+        "barcode": "",
+        "name": "Smooth Blue Vein Cheese 200g",
+        "brand": "EMPORIUM SELECTION",
+        "size": "0.2 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/676478e4-d728-4b79-8441-bd86a86a45e1/Smooth%20Blue%20Vein%20Cheese%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 5.99,
+                "original_price": 5.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_natural-walnuts-500g-000000000000282420": {
+        "barcode": "",
+        "name": "Natural Walnuts 500g",
+        "brand": "FORRESTERS",
+        "size": "0.5 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/7a9ca36f-138b-441b-b6c7-ca33f2700499/Natural%20Walnuts%20500g",
+        "prices": {
+            "ALDI": {
+                "price": 10.49,
+                "original_price": 10.49,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_selection-smoked-cheese-200g-000000000000283609": {
+        "barcode": "",
+        "name": "Smoked Cheese 200g",
+        "brand": "EMPORIUM SELECTION",
+        "size": "0.2 kg",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/5273d675-32cb-4890-92b7-30517d641c3e/Smoked%20Cheese%20200g",
+        "prices": {
+            "ALDI": {
+                "price": 4.99,
+                "original_price": 4.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_biscuit-co-jaffa-cakes-150g-000000000000283683": {
+        "barcode": "",
+        "name": "Jaffa Cakes 150g",
+        "brand": "BELMONT BISCUIT CO.",
+        "size": "150 g",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/b029499d-87ca-41ad-aa66-3fc389e41670/Jaffa%20Cakes%20150g",
+        "prices": {
+            "ALDI": {
+                "price": 2.79,
+                "original_price": 2.79,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_del-atrio-rioja-reserva-tempranillo-graciano-750ml-000000000000283861": {
+        "barcode": "",
+        "name": "Rioja Reserva Tempranillo Graciano 750ml",
+        "brand": "MARQUES DEL ATRIO",
+        "size": "750ml",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/6be7550c-b931-419f-838b-ee5bf9a6097f/Rioja%20Reserva%20Tempranillo%20Graciano%20750ml",
+        "prices": {
+            "ALDI": {
+                "price": 12.99,
+                "original_price": 12.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    },
+    "aldi_donnells-irish-country-cream-700ml-000000000000283907": {
+        "barcode": "",
+        "name": "Irish Country Cream 700ml",
+        "brand": "O&#39;DONNELLS",
+        "size": "700ml",
+        "category": "super-savers",
+        "image_url": "https://dm.apac.cms.aldi.cx/is/image/aldiprodapac/product/jpg/scaleWidth/232/e0bbfeb0-2a6a-4b7f-83e4-5dfd303f0787/Irish%20Country%20Cream%20700ml",
+        "prices": {
+            "ALDI": {
+                "price": 14.99,
+                "original_price": 14.99,
+                "is_promo": false,
+                "promo_desc": ""
+            }
+        },
+        "price_history": []
+    }
+}
