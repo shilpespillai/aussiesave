@@ -654,34 +654,32 @@ def make_result(template, query, idx, category=None):
         else:
             badge = "Woolies Special" if woolies_price == min_price else "Coles Special"
 
-    stores = []
-    if "Woolworths" in avail:
-        stores.append({
+    stores = [
+        {
             "name": "Woolworths",
-            "price": woolies_price,
-            "original": woolies_orig,
-            "isBest": woolies_price == min_price,
+            "price": woolies_price if "Woolworths" in avail else None,
+            "original": woolies_orig if "Woolworths" in avail else None,
+            "isBest": "Woolworths" in avail and woolies_price == min_price,
             "logo": "W",
             "logoClass": "bg-woolies"
-        })
-    if "Coles" in avail:
-        stores.append({
+        },
+        {
             "name": "Coles",
-            "price": coles_price,
-            "original": coles_orig,
-            "isBest": coles_price == min_price,
+            "price": coles_price if "Coles" in avail else None,
+            "original": coles_orig if "Coles" in avail else None,
+            "isBest": "Coles" in avail and coles_price == min_price,
             "logo": "C",
             "logoClass": "bg-coles"
-        })
-    if "ALDI" in avail:
-        stores.append({
+        },
+        {
             "name": "ALDI",
-            "price": aldi_price,
+            "price": aldi_price if "ALDI" in avail else None,
             "original": None,
-            "isBest": aldi_price == min_price,
+            "isBest": "ALDI" in avail and aldi_price == min_price,
             "logo": "A",
             "logoClass": "bg-aldi"
-        })
+        }
+    ]
 
     return {
         "id": f"scraped_{query.replace(' ', '_')}_{idx}",
