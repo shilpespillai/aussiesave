@@ -1117,59 +1117,60 @@
 
         // Product image lookup (maps to local assets or high-quality Unsplash category photos)
         function imageForDeal(deal) {
+            const cat = (deal.category || '').toLowerCase();
             const n = deal.name.toLowerCase();
             
             // Local high-fidelity mockup images
-            if (n.includes('milk')) return '/milk.png';
-            if (n.includes('chocolate') || n.includes('cadbury')) return '/cadbury.png';
-            if (n.includes('chips') || n.includes('smith')) return '/smiths.png';
+            if (cat === 'milk' || n.includes('milk')) return '/milk.png';
+            if (cat === 'chocolate' || n.includes('chocolate') || n.includes('cadbury')) return '/cadbury.png';
+            if (cat === 'chips' || n.includes('chips') || n.includes('smith')) return '/smiths.png';
 
             // High-quality category images mapping (using unsplash food/grocery images)
-            if (n.includes('bread') || n.includes('toast')) 
+            if (cat === 'bread' || n.includes('bread') || n.includes('toast')) 
                 return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('egg')) 
+            if (cat === 'eggs' || n.includes('egg')) 
                 return 'https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('butter')) 
+            if (cat === 'butter' || n.includes('butter')) 
                 return 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('cheese')) 
+            if (cat === 'cheese' || n.includes('cheese')) 
                 return 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('yoghurt') || n.includes('yogurt')) 
+            if (cat === 'yoghurt' || cat === 'yogurt' || n.includes('yoghurt') || n.includes('yogurt')) 
                 return 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('cereal') || n.includes('oats') || n.includes('weet-bix')) 
+            if (cat === 'cereal' || n.includes('cereal') || n.includes('oats') || n.includes('weet-bix')) 
                 return 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('coffee') || n.includes('moccona')) 
+            if (cat === 'coffee' || n.includes('coffee') || n.includes('moccona')) 
                 return 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('juice') || n.includes('orange juice')) 
+            if (cat === 'juice' || n.includes('juice') || n.includes('orange juice')) 
                 return 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('water')) 
+            if (cat === 'water' || n.includes('water')) 
                 return 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('coke') || n.includes('cola') || n.includes('soft drink')) 
+            if (cat === 'coke' || cat === 'cola' || n.includes('coke') || n.includes('cola') || n.includes('soft drink')) 
                 return 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('beer')) 
+            if (cat === 'beer' || n.includes('beer')) 
                 return 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('laundry') || n.includes('clean')) 
+            if (cat === 'laundry' || cat === 'dishwashing' || cat === 'cleaning' || n.includes('laundry') || n.includes('dishwashing') || n.includes('clean')) 
                 return 'https://images.unsplash.com/photo-1610557892470-76d747eed2f1?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('toilet') || n.includes('tissues')) 
+            if (cat === 'toilet' || cat === 'tissues' || n.includes('toilet') || n.includes('tissues') || n.includes('quilton') || n.includes('sorbent') || n.includes('kleenex')) 
                 return 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('shampoo') || n.includes('toothpaste') || n.includes('deodorant')) 
+            if (cat === 'shampoo' || cat === 'toothpaste' || cat === 'deodorant' || n.includes('shampoo') || n.includes('toothpaste') || n.includes('deodorant')) 
                 return 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('chicken') || n.includes('beef') || n.includes('meat')) 
+            if (cat === 'chicken' || cat === 'beef' || cat === 'meat' || n.includes('chicken') || n.includes('beef') || n.includes('meat')) 
                 return 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('fish') || n.includes('seafood')) 
+            if (cat === 'fish' || n.includes('fish') || n.includes('seafood')) 
                 return 'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('pasta')) 
+            if (cat === 'pasta' || n.includes('pasta')) 
                 return 'https://images.unsplash.com/photo-1612966608967-312ba5987236?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('rice')) 
+            if (cat === 'rice' || n.includes('rice')) 
                 return 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('oil')) 
+            if (cat === 'oil' || n.includes('oil')) 
                 return 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('sauce') || n.includes('condiment')) 
+            if (cat === 'sauce' || n.includes('sauce') || n.includes('condiment')) 
                 return 'https://images.unsplash.com/photo-1618331835717-801e976710b2?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('pet') || n.includes('dog') || n.includes('cat')) 
+            if (cat === 'pet' || n.includes('pet') || n.includes('dog') || n.includes('cat')) 
                 return 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('frozen') || n.includes('ice cream')) 
+            if (cat === 'frozen' || cat === 'ice cream' || n.includes('frozen') || n.includes('ice cream')) 
                 return 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=160&auto=format&fit=crop&q=80';
-            if (n.includes('vegemite') || n.includes('spread') || n.includes('jam')) 
+            if (cat === 'vegemite' || n.includes('vegemite') || n.includes('spread') || n.includes('jam')) 
                 return 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=160&auto=format&fit=crop&q=80';
 
             // Generic grocery fallback

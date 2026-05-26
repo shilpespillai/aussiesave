@@ -587,7 +587,7 @@ def resolve_catalog_key(query: str):
     return None
 
 
-def make_result(template, query, idx):
+def make_result(template, query, idx, category=None):
     base = template["base_price"]
 
     woolies_price = base
@@ -647,6 +647,7 @@ def make_result(template, query, idx):
         "name": template["name"],
         "brand": template["brand"],
         "badge": badge,
+        "category": category,
         "stores": stores
     }
 
@@ -702,7 +703,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 {"name": f"Coles {cap_q} Everyday",          "brand": "Coles",             "size": "500g", "base_price": 5.50},
             ]
 
-        results = [make_result(t, query, i) for i, t in enumerate(templates)]
+        results = [make_result(t, query, i, cat_key if cat_key else query) for i, t in enumerate(templates)]
         self.send_json(results)
 
 
